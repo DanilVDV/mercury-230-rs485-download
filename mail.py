@@ -17,10 +17,10 @@ try:
 except:
    mode = "energy"
 
-#UDP_DIST_IP = '192.168.104.193'
+#UDP_DIST_IP = '192.168.4.193'
 #UDP_DIST_IP = ipAddr
 #UDP_DIST_PORT = 161
-#UDP_SRC_IP = "192.168.104.150"
+#UDP_SRC_IP = "192.168.4.150"
 #UDP_SRC_PORT = 58992
 #K_I = 20 # коэффициент трансформации
 # Параметры подключения к преобразователям интерфейса RS-485 - ETHERNET ("UDP_DIST_IP","UDP_DIST_PORT","UDP_SRC_IP","UDP_SRC_PORT","K_I","адрес счетчика") 
