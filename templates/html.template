@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444; background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-k8on{font-size:16px;font-family:"Courier New", Courier, monospace !important;;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-gdgy{font-size:18px;font-family:"Courier New", Courier, monospace !important;;background-color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+
+        .tgg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+        .tgg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+        .tgg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#        f0f0f0;}
+        .tgg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
+        .tgg .tg-mrzz{background-color:#f9f9f9;text-align:left}
+        .tgg .tg-1ovc{font-size:16px;font-family:"Courier New", Courier, monospace !important;;border-color:#9b9b9b;text-align:center;vertical-align:top}
+        .tgg .tg-0lax{text-align:left;vertical-align:top}
+
+        .spoiler > input + label:after{content: "+";float: right;font-family: monospace;font-weight: bold;}
+        .spoiler > input:checked + label:after{content: "-";float: right;font-family: monospace;font-weight: bold;}
+        .spoiler > input{display:none;}
+        .spoiler > input + label , .spoiler > .spoiler_body{background:#CCC;padding:5px 15px;overflow:hidden;box-sizing: border-box;display: block;}
+        .spoiler > input + label + .spoiler_body{display:none;}
+        .spoiler > input:checked + label + .spoiler_body{display: block;}
+        .spoiler > label:hover {cursor:pointer;}
+        .spoiler > .spoiler_body{background: #FFF;border: 3px solid #CCC;border-top: none;}
+
+        .info {
+         display: inline-block; /* Строчно-блочный элемент */
+         position: relative; /* Относительное позиционирование */
+         }
+        .info:hover::after {
+         content: attr(data-title); /* Выводим текст */
+         position: absolute; /* Абсолютное позиционирование */
+         left: 30%; top: -20%; /* Положение подсказки */
+         z-index: 1; /* Отображаем подсказку поверх других элементов */
+         background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
+         font-family: Arial, sans-serif; /* Гарнитура шрифта */
+         font-size: 10px; /* Размер текста подсказки */
+         padding: 1px 1px; /* Поля */
+         border: 1px solid #333; /* Параметры рамки */
+         }
+
+      </style>
+ <title>Энергоснабжение</title>
+ </head>
+ <body>
+  <h2 align="center">Энергопотребление</h2>
+<table class="tg" style="margin:0 auto">
+
+  <tr>
+    <th class="tg-k8on">Ввод</th>
+    <th class="tg-k8on">Серийный №<br>счетчика</th>
+    <th class="tg-k8on">Показания<br>счетчика</th>
+    <th class="tg-k8on">Фактическое <br>значение,<br>кВт/ч</th>
+    <th class="tg-k8on">Израсходовано<br>с начала периода,<br>кВт/ч</th>
+    <th class="tg-k8on">Примерное время<br>превышения лимита,<br>в днях</th>
+  </tr>
+{% for context in contexts %}
+   <tr>
+    <td class="tg-gdgy">{{ context.name }}</td>
+    <td class="tg-gdgy">{{ context.serial }}</td>
+    <td class="tg-gdgy">{{ context.value }}</td>
+    <td class="tg-gdgy">{{ context.value_k_i }}</td>
+    <td class="tg-gdgy"><div class="info" data-title="{{ context.dataStartPeriod }}">{{ context.consumptionEnerjy }}</div></td>
+    <td class="tg-gdgy"><div class="info" data-title="{{ context.limitEnerjy }}">{{ context.limitEnerjyDay }}</div></td>
+  </tr>
+{% endfor %}
+</table>
+<br>
+<h2 align="center">Статистика</h2>
+<div class="spoiler">
+<input type="checkbox" id="spoilerid_1"><label for="spoilerid_1">
+Статистика мгновенных значений
+</label><div class="spoiler_body">
+
+<style type="text/css">
+
+</style>
+<table class="tgg">
+  <tr>
+    <th class="tg-1ovc">Время</th>
+    <th class="tg-1ovc">Напряжение<br> фазы L1, В</th>
+    <th class="tg-1ovc">Напряжение<br> фазы L2, В</th>
+    <th class="tg-1ovc">Напряжение <br>фазы L3, В</th>
+    <th class="tg-1ovc">Ток фазы L1,<br>А</th>
+    <th class="tg-1ovc">Ток фазы L2,<br>А</th>
+    <th class="tg-1ovc">Ток фазы L3,<br>А</th>
+    <th class="tg-1ovc">Суммарная<br>мощность, Вт</th>
+  </tr>
+{% for item in items %}
+  <tr>
+    <td class="tg-0lax">{{ item.date_time }}</td>
+    <td class="tg-mrzz">{{ item.v_l1 }}</td>
+    <td class="tg-0lax">{{ item.v_l2 }}</td>
+    <td class="tg-buh4">{{ item.v_l3 }}</td>
+    <td class="tg-0lax">{{ item.c_l1 }}</td>
+    <td class="tg-buh4">{{ item.c_l2 }}</td>
+    <td class="tg-0lax">{{ item.c_l3 }}</td>
+    <td class="tg-buh4">{{ item.p_sum }}</td>
+  </tr>
+{% endfor %}
+</table>
+</div></div>
+</body>
+</html>

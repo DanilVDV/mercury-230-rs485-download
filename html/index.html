@@ -1,0 +1,3150 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444; background-color:#F7FDFA;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+        .tg .tg-k8on{font-size:16px;font-family:"Courier New", Courier, monospace !important;;color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-gdgy{font-size:18px;font-family:"Courier New", Courier, monospace !important;;background-color:#ffffff;border-color:#000000;text-align:center;vertical-align:top}
+
+        .tgg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+        .tgg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+        .tgg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#        f0f0f0;}
+        .tgg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
+        .tgg .tg-mrzz{background-color:#f9f9f9;text-align:left}
+        .tgg .tg-1ovc{font-size:16px;font-family:"Courier New", Courier, monospace !important;;border-color:#9b9b9b;text-align:center;vertical-align:top}
+        .tgg .tg-0lax{text-align:left;vertical-align:top}
+
+        .spoiler > input + label:after{content: "+";float: right;font-family: monospace;font-weight: bold;}
+        .spoiler > input:checked + label:after{content: "-";float: right;font-family: monospace;font-weight: bold;}
+        .spoiler > input{display:none;}
+        .spoiler > input + label , .spoiler > .spoiler_body{background:#CCC;padding:5px 15px;overflow:hidden;box-sizing: border-box;display: block;}
+        .spoiler > input + label + .spoiler_body{display:none;}
+        .spoiler > input:checked + label + .spoiler_body{display: block;}
+        .spoiler > label:hover {cursor:pointer;}
+        .spoiler > .spoiler_body{background: #FFF;border: 3px solid #CCC;border-top: none;}
+
+        .info {
+         display: inline-block; /* Строчно-блочный элемент */
+         position: relative; /* Относительное позиционирование */
+         }
+        .info:hover::after {
+         content: attr(data-title); /* Выводим текст */
+         position: absolute; /* Абсолютное позиционирование */
+         left: 30%; top: -20%; /* Положение подсказки */
+         z-index: 1; /* Отображаем подсказку поверх других элементов */
+         background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
+         font-family: Arial, sans-serif; /* Гарнитура шрифта */
+         font-size: 10px; /* Размер текста подсказки */
+         padding: 1px 1px; /* Поля */
+         border: 1px solid #333; /* Параметры рамки */
+         }
+
+      </style>
+ <title>Энергоснабжение</title>
+ </head>
+ <body>
+  <h2 align="center">Энергопотребление</h2>
+<table class="tg" style="margin:0 auto">
+
+  <tr>
+    <th class="tg-k8on">Ввод</th>
+    <th class="tg-k8on">Серийный №<br>счетчика</th>
+    <th class="tg-k8on">Показания<br>счетчика</th>
+    <th class="tg-k8on">Фактическое <br>значение,<br>кВт/ч</th>
+    <th class="tg-k8on">Израсходовано<br>с начала периода,<br>кВт/ч</th>
+    <th class="tg-k8on">Примерное время<br>превышения лимита,<br>в днях</th>
+  </tr>
+
+   <tr>
+    <td class="tg-gdgy">FIDER-1</td>
+    <td class="tg-gdgy">00000070</td>
+    <td class="tg-gdgy">419.947</td>
+    <td class="tg-gdgy">8398.94</td>
+    <td class="tg-gdgy"><div class="info" data-title="2018-10-08 15:27:48">1978.46</div></td>
+    <td class="tg-gdgy"><div class="info" data-title="16021.54">25</div></td>
+  </tr>
+
+   <tr>
+    <td class="tg-gdgy">FIDER-2</td>
+    <td class="tg-gdgy">00000071</td>
+    <td class="tg-gdgy">-</td>
+    <td class="tg-gdgy">-</td>
+    <td class="tg-gdgy"><div class="info" data-title="">-</div></td>
+    <td class="tg-gdgy"><div class="info" data-title="-">-</div></td>
+  </tr>
+
+   <tr>
+    <td class="tg-gdgy">FIDER-2</td>
+    <td class="tg-gdgy">00000072</td>
+    <td class="tg-gdgy">-</td>
+    <td class="tg-gdgy">-</td>
+    <td class="tg-gdgy"><div class="info" data-title="">-</div></td>
+    <td class="tg-gdgy"><div class="info" data-title="-">-</div></td>
+  </tr>
+
+</table>
+<br>
+<h2 align="center">Статистика</h2>
+<div class="spoiler">
+<input type="checkbox" id="spoilerid_1"><label for="spoilerid_1">
+Статистика мгновенных значений
+</label><div class="spoiler_body">
+
+<style type="text/css">
+
+</style>
+<table class="tgg">
+  <tr>
+    <th class="tg-1ovc">Время</th>
+    <th class="tg-1ovc">Напряжение<br> фазы L1, В</th>
+    <th class="tg-1ovc">Напряжение<br> фазы L2, В</th>
+    <th class="tg-1ovc">Напряжение <br>фазы L3, В</th>
+    <th class="tg-1ovc">Ток фазы L1,<br>А</th>
+    <th class="tg-1ovc">Ток фазы L2,<br>А</th>
+    <th class="tg-1ovc">Ток фазы L3,<br>А</th>
+    <th class="tg-1ovc">Суммарная<br>мощность, Вт</th>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:52:01</td>
+    <td class="tg-mrzz">221.53</td>
+    <td class="tg-0lax">232.95</td>
+    <td class="tg-buh4">227.7</td>
+    <td class="tg-0lax">43.94</td>
+    <td class="tg-buh4">41.14</td>
+    <td class="tg-0lax">39.16</td>
+    <td class="tg-buh4">21463.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:51:01</td>
+    <td class="tg-mrzz">220.1</td>
+    <td class="tg-0lax">232.44</td>
+    <td class="tg-buh4">228.46</td>
+    <td class="tg-0lax">43.78</td>
+    <td class="tg-buh4">41.58</td>
+    <td class="tg-0lax">35.8</td>
+    <td class="tg-buh4">20321.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:50:01</td>
+    <td class="tg-mrzz">218.5</td>
+    <td class="tg-0lax">233.24</td>
+    <td class="tg-buh4">229.29</td>
+    <td class="tg-0lax">44.08</td>
+    <td class="tg-buh4">42.0</td>
+    <td class="tg-0lax">35.3</td>
+    <td class="tg-buh4">20342.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:49:01</td>
+    <td class="tg-mrzz">219.78</td>
+    <td class="tg-0lax">231.52</td>
+    <td class="tg-buh4">227.76</td>
+    <td class="tg-0lax">43.88</td>
+    <td class="tg-buh4">41.8</td>
+    <td class="tg-0lax">35.16</td>
+    <td class="tg-buh4">20238.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:48:01</td>
+    <td class="tg-mrzz">221.63</td>
+    <td class="tg-0lax">232.02</td>
+    <td class="tg-buh4">226.82</td>
+    <td class="tg-0lax">43.34</td>
+    <td class="tg-buh4">42.0</td>
+    <td class="tg-0lax">35.68</td>
+    <td class="tg-buh4">20337.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:47:02</td>
+    <td class="tg-mrzz">221.23</td>
+    <td class="tg-0lax">231.24</td>
+    <td class="tg-buh4">226.49</td>
+    <td class="tg-0lax">42.84</td>
+    <td class="tg-buh4">42.4</td>
+    <td class="tg-0lax">38.94</td>
+    <td class="tg-buh4">21596.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:46:01</td>
+    <td class="tg-mrzz">221.78</td>
+    <td class="tg-0lax">231.71</td>
+    <td class="tg-buh4">226.69</td>
+    <td class="tg-0lax">43.16</td>
+    <td class="tg-buh4">42.06</td>
+    <td class="tg-0lax">38.26</td>
+    <td class="tg-buh4">21456.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:45:01</td>
+    <td class="tg-mrzz">221.52</td>
+    <td class="tg-0lax">230.49</td>
+    <td class="tg-buh4">225.76</td>
+    <td class="tg-0lax">43.24</td>
+    <td class="tg-buh4">42.2</td>
+    <td class="tg-0lax">38.44</td>
+    <td class="tg-buh4">21587.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:44:01</td>
+    <td class="tg-mrzz">220.45</td>
+    <td class="tg-0lax">231.26</td>
+    <td class="tg-buh4">227.08</td>
+    <td class="tg-0lax">43.46</td>
+    <td class="tg-buh4">42.14</td>
+    <td class="tg-0lax">35.38</td>
+    <td class="tg-buh4">20335.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:43:01</td>
+    <td class="tg-mrzz">222.57</td>
+    <td class="tg-0lax">232.95</td>
+    <td class="tg-buh4">227.34</td>
+    <td class="tg-0lax">43.22</td>
+    <td class="tg-buh4">41.7</td>
+    <td class="tg-0lax">35.54</td>
+    <td class="tg-buh4">20189.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:42:01</td>
+    <td class="tg-mrzz">222.42</td>
+    <td class="tg-0lax">231.68</td>
+    <td class="tg-buh4">228.45</td>
+    <td class="tg-0lax">42.72</td>
+    <td class="tg-buh4">41.66</td>
+    <td class="tg-0lax">35.26</td>
+    <td class="tg-buh4">20094.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:41:01</td>
+    <td class="tg-mrzz">222.01</td>
+    <td class="tg-0lax">231.87</td>
+    <td class="tg-buh4">229.26</td>
+    <td class="tg-0lax">42.68</td>
+    <td class="tg-buh4">41.82</td>
+    <td class="tg-0lax">35.68</td>
+    <td class="tg-buh4">20240.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:40:01</td>
+    <td class="tg-mrzz">221.72</td>
+    <td class="tg-0lax">230.88</td>
+    <td class="tg-buh4">227.81</td>
+    <td class="tg-0lax">42.9</td>
+    <td class="tg-buh4">42.14</td>
+    <td class="tg-0lax">35.26</td>
+    <td class="tg-buh4">20214.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:39:01</td>
+    <td class="tg-mrzz">221.94</td>
+    <td class="tg-0lax">233.6</td>
+    <td class="tg-buh4">227.19</td>
+    <td class="tg-0lax">43.3</td>
+    <td class="tg-buh4">42.06</td>
+    <td class="tg-0lax">38.44</td>
+    <td class="tg-buh4">21625.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:38:01</td>
+    <td class="tg-mrzz">224.1</td>
+    <td class="tg-0lax">232.79</td>
+    <td class="tg-buh4">226.49</td>
+    <td class="tg-0lax">43.48</td>
+    <td class="tg-buh4">42.04</td>
+    <td class="tg-0lax">39.66</td>
+    <td class="tg-buh4">21843.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:37:01</td>
+    <td class="tg-mrzz">222.24</td>
+    <td class="tg-0lax">231.72</td>
+    <td class="tg-buh4">226.59</td>
+    <td class="tg-0lax">43.38</td>
+    <td class="tg-buh4">41.86</td>
+    <td class="tg-0lax">37.68</td>
+    <td class="tg-buh4">21160.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:36:01</td>
+    <td class="tg-mrzz">223.85</td>
+    <td class="tg-0lax">231.71</td>
+    <td class="tg-buh4">227.08</td>
+    <td class="tg-0lax">43.0</td>
+    <td class="tg-buh4">41.94</td>
+    <td class="tg-0lax">36.12</td>
+    <td class="tg-buh4">20340.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:34:01</td>
+    <td class="tg-mrzz">223.69</td>
+    <td class="tg-0lax">233.07</td>
+    <td class="tg-buh4">227.4</td>
+    <td class="tg-0lax">43.56</td>
+    <td class="tg-buh4">41.8</td>
+    <td class="tg-0lax">37.1</td>
+    <td class="tg-buh4">20568.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:33:01</td>
+    <td class="tg-mrzz">225.49</td>
+    <td class="tg-0lax">233.05</td>
+    <td class="tg-buh4">225.71</td>
+    <td class="tg-0lax">43.7</td>
+    <td class="tg-buh4">41.68</td>
+    <td class="tg-0lax">40.12</td>
+    <td class="tg-buh4">21912.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:32:02</td>
+    <td class="tg-mrzz">226.34</td>
+    <td class="tg-0lax">233.13</td>
+    <td class="tg-buh4">226.32</td>
+    <td class="tg-0lax">43.68</td>
+    <td class="tg-buh4">41.22</td>
+    <td class="tg-0lax">40.28</td>
+    <td class="tg-buh4">21789.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:31:01</td>
+    <td class="tg-mrzz">224.31</td>
+    <td class="tg-0lax">232.26</td>
+    <td class="tg-buh4">228.45</td>
+    <td class="tg-0lax">43.5</td>
+    <td class="tg-buh4">41.66</td>
+    <td class="tg-0lax">40.02</td>
+    <td class="tg-buh4">21900.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:30:01</td>
+    <td class="tg-mrzz">223.06</td>
+    <td class="tg-0lax">231.98</td>
+    <td class="tg-buh4">229.08</td>
+    <td class="tg-0lax">43.48</td>
+    <td class="tg-buh4">41.86</td>
+    <td class="tg-0lax">36.28</td>
+    <td class="tg-buh4">20528.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:29:01</td>
+    <td class="tg-mrzz">223.52</td>
+    <td class="tg-0lax">232.55</td>
+    <td class="tg-buh4">228.56</td>
+    <td class="tg-0lax">44.04</td>
+    <td class="tg-buh4">41.44</td>
+    <td class="tg-0lax">36.68</td>
+    <td class="tg-buh4">20542.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:28:01</td>
+    <td class="tg-mrzz">223.13</td>
+    <td class="tg-0lax">232.38</td>
+    <td class="tg-buh4">228.71</td>
+    <td class="tg-0lax">43.04</td>
+    <td class="tg-buh4">41.46</td>
+    <td class="tg-0lax">36.1</td>
+    <td class="tg-buh4">20330.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:27:01</td>
+    <td class="tg-mrzz">225.12</td>
+    <td class="tg-0lax">233.52</td>
+    <td class="tg-buh4">227.5</td>
+    <td class="tg-0lax">43.26</td>
+    <td class="tg-buh4">41.92</td>
+    <td class="tg-0lax">36.88</td>
+    <td class="tg-buh4">20564.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:26:01</td>
+    <td class="tg-mrzz">224.22</td>
+    <td class="tg-0lax">233.4</td>
+    <td class="tg-buh4">226.12</td>
+    <td class="tg-0lax">43.6</td>
+    <td class="tg-buh4">41.58</td>
+    <td class="tg-0lax">39.48</td>
+    <td class="tg-buh4">21568.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:25:01</td>
+    <td class="tg-mrzz">224.01</td>
+    <td class="tg-0lax">233.56</td>
+    <td class="tg-buh4">225.97</td>
+    <td class="tg-0lax">43.66</td>
+    <td class="tg-buh4">41.94</td>
+    <td class="tg-0lax">39.04</td>
+    <td class="tg-buh4">21697.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:24:01</td>
+    <td class="tg-mrzz">223.52</td>
+    <td class="tg-0lax">233.12</td>
+    <td class="tg-buh4">228.11</td>
+    <td class="tg-0lax">43.06</td>
+    <td class="tg-buh4">41.74</td>
+    <td class="tg-0lax">39.76</td>
+    <td class="tg-buh4">21669.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:23:01</td>
+    <td class="tg-mrzz">222.73</td>
+    <td class="tg-0lax">232.78</td>
+    <td class="tg-buh4">229.16</td>
+    <td class="tg-0lax">42.9</td>
+    <td class="tg-buh4">41.92</td>
+    <td class="tg-0lax">36.46</td>
+    <td class="tg-buh4">20427.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:22:01</td>
+    <td class="tg-mrzz">222.17</td>
+    <td class="tg-0lax">234.58</td>
+    <td class="tg-buh4">228.48</td>
+    <td class="tg-0lax">43.32</td>
+    <td class="tg-buh4">42.06</td>
+    <td class="tg-0lax">36.46</td>
+    <td class="tg-buh4">20548.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:21:01</td>
+    <td class="tg-mrzz">222.83</td>
+    <td class="tg-0lax">234.31</td>
+    <td class="tg-buh4">229.82</td>
+    <td class="tg-0lax">43.34</td>
+    <td class="tg-buh4">42.24</td>
+    <td class="tg-0lax">36.1</td>
+    <td class="tg-buh4">20455.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:19:01</td>
+    <td class="tg-mrzz">222.32</td>
+    <td class="tg-0lax">232.83</td>
+    <td class="tg-buh4">228.33</td>
+    <td class="tg-0lax">42.74</td>
+    <td class="tg-buh4">42.04</td>
+    <td class="tg-0lax">36.1</td>
+    <td class="tg-buh4">20413.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:18:01</td>
+    <td class="tg-mrzz">223.96</td>
+    <td class="tg-0lax">233.44</td>
+    <td class="tg-buh4">227.44</td>
+    <td class="tg-0lax">42.8</td>
+    <td class="tg-buh4">41.76</td>
+    <td class="tg-0lax">39.26</td>
+    <td class="tg-buh4">21604.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:17:01</td>
+    <td class="tg-mrzz">224.75</td>
+    <td class="tg-0lax">232.67</td>
+    <td class="tg-buh4">225.93</td>
+    <td class="tg-0lax">43.04</td>
+    <td class="tg-buh4">41.68</td>
+    <td class="tg-0lax">38.92</td>
+    <td class="tg-buh4">21618.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:16:01</td>
+    <td class="tg-mrzz">224.34</td>
+    <td class="tg-0lax">233.65</td>
+    <td class="tg-buh4">227.79</td>
+    <td class="tg-0lax">43.46</td>
+    <td class="tg-buh4">41.72</td>
+    <td class="tg-0lax">38.36</td>
+    <td class="tg-buh4">21395.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:14:02</td>
+    <td class="tg-mrzz">222.23</td>
+    <td class="tg-0lax">232.75</td>
+    <td class="tg-buh4">228.18</td>
+    <td class="tg-0lax">43.58</td>
+    <td class="tg-buh4">41.8</td>
+    <td class="tg-0lax">36.52</td>
+    <td class="tg-buh4">20590.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:13:01</td>
+    <td class="tg-mrzz">223.56</td>
+    <td class="tg-0lax">233.77</td>
+    <td class="tg-buh4">228.76</td>
+    <td class="tg-0lax">43.38</td>
+    <td class="tg-buh4">41.96</td>
+    <td class="tg-0lax">36.84</td>
+    <td class="tg-buh4">20661.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:12:01</td>
+    <td class="tg-mrzz">222.96</td>
+    <td class="tg-0lax">234.45</td>
+    <td class="tg-buh4">228.5</td>
+    <td class="tg-0lax">44.28</td>
+    <td class="tg-buh4">41.78</td>
+    <td class="tg-0lax">36.84</td>
+    <td class="tg-buh4">20727.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:11:01</td>
+    <td class="tg-mrzz">224.67</td>
+    <td class="tg-0lax">232.23</td>
+    <td class="tg-buh4">226.49</td>
+    <td class="tg-0lax">43.94</td>
+    <td class="tg-buh4">42.34</td>
+    <td class="tg-0lax">40.3</td>
+    <td class="tg-buh4">22163.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:10:01</td>
+    <td class="tg-mrzz">224.67</td>
+    <td class="tg-0lax">232.77</td>
+    <td class="tg-buh4">226.91</td>
+    <td class="tg-0lax">43.84</td>
+    <td class="tg-buh4">42.52</td>
+    <td class="tg-0lax">40.44</td>
+    <td class="tg-buh4">22242.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:09:01</td>
+    <td class="tg-mrzz">224.49</td>
+    <td class="tg-0lax">232.38</td>
+    <td class="tg-buh4">227.29</td>
+    <td class="tg-0lax">43.48</td>
+    <td class="tg-buh4">42.82</td>
+    <td class="tg-0lax">40.84</td>
+    <td class="tg-buh4">22300.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:08:01</td>
+    <td class="tg-mrzz">224.27</td>
+    <td class="tg-0lax">233.01</td>
+    <td class="tg-buh4">228.17</td>
+    <td class="tg-0lax">42.98</td>
+    <td class="tg-buh4">43.06</td>
+    <td class="tg-0lax">37.46</td>
+    <td class="tg-buh4">21040.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:07:01</td>
+    <td class="tg-mrzz">223.61</td>
+    <td class="tg-0lax">233.39</td>
+    <td class="tg-buh4">229.28</td>
+    <td class="tg-0lax">43.18</td>
+    <td class="tg-buh4">43.24</td>
+    <td class="tg-0lax">37.02</td>
+    <td class="tg-buh4">20959.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:06:01</td>
+    <td class="tg-mrzz">222.11</td>
+    <td class="tg-0lax">234.84</td>
+    <td class="tg-buh4">230.0</td>
+    <td class="tg-0lax">43.78</td>
+    <td class="tg-buh4">43.76</td>
+    <td class="tg-0lax">36.34</td>
+    <td class="tg-buh4">21045.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:05:01</td>
+    <td class="tg-mrzz">222.73</td>
+    <td class="tg-0lax">234.73</td>
+    <td class="tg-buh4">228.46</td>
+    <td class="tg-0lax">43.64</td>
+    <td class="tg-buh4">44.16</td>
+    <td class="tg-0lax">36.12</td>
+    <td class="tg-buh4">21058.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:04:02</td>
+    <td class="tg-mrzz">221.21</td>
+    <td class="tg-0lax">234.76</td>
+    <td class="tg-buh4">230.44</td>
+    <td class="tg-0lax">44.74</td>
+    <td class="tg-buh4">44.48</td>
+    <td class="tg-0lax">35.98</td>
+    <td class="tg-buh4">21313.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:03:01</td>
+    <td class="tg-mrzz">223.03</td>
+    <td class="tg-0lax">233.24</td>
+    <td class="tg-buh4">228.12</td>
+    <td class="tg-0lax">44.48</td>
+    <td class="tg-buh4">44.3</td>
+    <td class="tg-0lax">40.02</td>
+    <td class="tg-buh4">22705.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:02:02</td>
+    <td class="tg-mrzz">224.34</td>
+    <td class="tg-0lax">230.71</td>
+    <td class="tg-buh4">227.56</td>
+    <td class="tg-0lax">44.86</td>
+    <td class="tg-buh4">43.74</td>
+    <td class="tg-0lax">40.4</td>
+    <td class="tg-buh4">22602.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 17:01:01</td>
+    <td class="tg-mrzz">224.51</td>
+    <td class="tg-0lax">230.47</td>
+    <td class="tg-buh4">228.58</td>
+    <td class="tg-0lax">44.64</td>
+    <td class="tg-buh4">43.76</td>
+    <td class="tg-0lax">38.26</td>
+    <td class="tg-buh4">22105.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:59:01</td>
+    <td class="tg-mrzz">225.28</td>
+    <td class="tg-0lax">230.37</td>
+    <td class="tg-buh4">228.73</td>
+    <td class="tg-0lax">45.56</td>
+    <td class="tg-buh4">44.24</td>
+    <td class="tg-0lax">36.74</td>
+    <td class="tg-buh4">21574.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:58:01</td>
+    <td class="tg-mrzz">223.93</td>
+    <td class="tg-0lax">230.32</td>
+    <td class="tg-buh4">229.62</td>
+    <td class="tg-0lax">45.16</td>
+    <td class="tg-buh4">44.44</td>
+    <td class="tg-0lax">36.56</td>
+    <td class="tg-buh4">21543.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:57:01</td>
+    <td class="tg-mrzz">223.32</td>
+    <td class="tg-0lax">230.8</td>
+    <td class="tg-buh4">229.63</td>
+    <td class="tg-0lax">44.92</td>
+    <td class="tg-buh4">44.58</td>
+    <td class="tg-0lax">36.4</td>
+    <td class="tg-buh4">21391.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:56:01</td>
+    <td class="tg-mrzz">224.8</td>
+    <td class="tg-0lax">230.28</td>
+    <td class="tg-buh4">228.86</td>
+    <td class="tg-0lax">45.16</td>
+    <td class="tg-buh4">44.96</td>
+    <td class="tg-0lax">38.96</td>
+    <td class="tg-buh4">22712.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:55:01</td>
+    <td class="tg-mrzz">224.06</td>
+    <td class="tg-0lax">231.25</td>
+    <td class="tg-buh4">229.14</td>
+    <td class="tg-0lax">45.38</td>
+    <td class="tg-buh4">44.24</td>
+    <td class="tg-0lax">38.68</td>
+    <td class="tg-buh4">22564.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:54:01</td>
+    <td class="tg-mrzz">225.96</td>
+    <td class="tg-0lax">230.91</td>
+    <td class="tg-buh4">227.73</td>
+    <td class="tg-0lax">44.8</td>
+    <td class="tg-buh4">44.14</td>
+    <td class="tg-0lax">39.34</td>
+    <td class="tg-buh4">22524.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:53:01</td>
+    <td class="tg-mrzz">224.54</td>
+    <td class="tg-0lax">230.07</td>
+    <td class="tg-buh4">227.61</td>
+    <td class="tg-0lax">44.32</td>
+    <td class="tg-buh4">43.8</td>
+    <td class="tg-0lax">35.76</td>
+    <td class="tg-buh4">21042.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:52:01</td>
+    <td class="tg-mrzz">225.46</td>
+    <td class="tg-0lax">230.68</td>
+    <td class="tg-buh4">228.16</td>
+    <td class="tg-0lax">45.0</td>
+    <td class="tg-buh4">43.46</td>
+    <td class="tg-0lax">36.5</td>
+    <td class="tg-buh4">21244.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:51:01</td>
+    <td class="tg-mrzz">223.77</td>
+    <td class="tg-0lax">230.85</td>
+    <td class="tg-buh4">227.7</td>
+    <td class="tg-0lax">45.22</td>
+    <td class="tg-buh4">43.7</td>
+    <td class="tg-0lax">35.78</td>
+    <td class="tg-buh4">21125.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:49:01</td>
+    <td class="tg-mrzz">225.51</td>
+    <td class="tg-0lax">230.14</td>
+    <td class="tg-buh4">228.5</td>
+    <td class="tg-0lax">45.52</td>
+    <td class="tg-buh4">43.22</td>
+    <td class="tg-0lax">38.78</td>
+    <td class="tg-buh4">22258.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:48:01</td>
+    <td class="tg-mrzz">224.46</td>
+    <td class="tg-0lax">229.52</td>
+    <td class="tg-buh4">227.74</td>
+    <td class="tg-0lax">44.7</td>
+    <td class="tg-buh4">43.28</td>
+    <td class="tg-0lax">38.68</td>
+    <td class="tg-buh4">22185.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:47:01</td>
+    <td class="tg-mrzz">225.39</td>
+    <td class="tg-0lax">229.85</td>
+    <td class="tg-buh4">227.89</td>
+    <td class="tg-0lax">45.0</td>
+    <td class="tg-buh4">43.12</td>
+    <td class="tg-0lax">39.34</td>
+    <td class="tg-buh4">22300.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:46:01</td>
+    <td class="tg-mrzz">225.93</td>
+    <td class="tg-0lax">228.86</td>
+    <td class="tg-buh4">228.88</td>
+    <td class="tg-0lax">44.52</td>
+    <td class="tg-buh4">43.4</td>
+    <td class="tg-0lax">35.68</td>
+    <td class="tg-buh4">20991.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:44:01</td>
+    <td class="tg-mrzz">225.94</td>
+    <td class="tg-0lax">229.23</td>
+    <td class="tg-buh4">228.1</td>
+    <td class="tg-0lax">44.66</td>
+    <td class="tg-buh4">43.26</td>
+    <td class="tg-0lax">36.34</td>
+    <td class="tg-buh4">21176.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:43:01</td>
+    <td class="tg-mrzz">225.91</td>
+    <td class="tg-0lax">229.35</td>
+    <td class="tg-buh4">228.46</td>
+    <td class="tg-0lax">44.34</td>
+    <td class="tg-buh4">43.56</td>
+    <td class="tg-0lax">36.2</td>
+    <td class="tg-buh4">21004.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:42:01</td>
+    <td class="tg-mrzz">224.21</td>
+    <td class="tg-0lax">228.52</td>
+    <td class="tg-buh4">228.16</td>
+    <td class="tg-0lax">44.0</td>
+    <td class="tg-buh4">44.24</td>
+    <td class="tg-0lax">38.48</td>
+    <td class="tg-buh4">22273.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:41:01</td>
+    <td class="tg-mrzz">224.48</td>
+    <td class="tg-0lax">228.89</td>
+    <td class="tg-buh4">229.87</td>
+    <td class="tg-0lax">44.34</td>
+    <td class="tg-buh4">43.72</td>
+    <td class="tg-0lax">38.26</td>
+    <td class="tg-buh4">22105.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:40:01</td>
+    <td class="tg-mrzz">224.98</td>
+    <td class="tg-0lax">228.74</td>
+    <td class="tg-buh4">227.74</td>
+    <td class="tg-0lax">43.72</td>
+    <td class="tg-buh4">43.72</td>
+    <td class="tg-0lax">39.0</td>
+    <td class="tg-buh4">22303.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:39:01</td>
+    <td class="tg-mrzz">223.6</td>
+    <td class="tg-0lax">229.3</td>
+    <td class="tg-buh4">229.29</td>
+    <td class="tg-0lax">44.74</td>
+    <td class="tg-buh4">43.96</td>
+    <td class="tg-0lax">35.24</td>
+    <td class="tg-buh4">21029.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:38:01</td>
+    <td class="tg-mrzz">224.72</td>
+    <td class="tg-0lax">229.63</td>
+    <td class="tg-buh4">228.43</td>
+    <td class="tg-0lax">44.72</td>
+    <td class="tg-buh4">44.24</td>
+    <td class="tg-0lax">35.7</td>
+    <td class="tg-buh4">21143.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:37:01</td>
+    <td class="tg-mrzz">225.1</td>
+    <td class="tg-0lax">229.3</td>
+    <td class="tg-buh4">228.3</td>
+    <td class="tg-0lax">44.96</td>
+    <td class="tg-buh4">44.22</td>
+    <td class="tg-0lax">36.0</td>
+    <td class="tg-buh4">21310.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 16:36:01</td>
+    <td class="tg-mrzz">225.89</td>
+    <td class="tg-0lax">228.89</td>
+    <td class="tg-buh4">229.38</td>
+    <td class="tg-0lax">44.2</td>
+    <td class="tg-buh4">44.5</td>
+    <td class="tg-0lax">35.92</td>
+    <td class="tg-buh4">21224.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:58:01</td>
+    <td class="tg-mrzz">226.99</td>
+    <td class="tg-0lax">230.21</td>
+    <td class="tg-buh4">227.03</td>
+    <td class="tg-0lax">41.9</td>
+    <td class="tg-buh4">40.62</td>
+    <td class="tg-0lax">33.18</td>
+    <td class="tg-buh4">20265.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:57:02</td>
+    <td class="tg-mrzz">226.67</td>
+    <td class="tg-0lax">230.52</td>
+    <td class="tg-buh4">226.73</td>
+    <td class="tg-0lax">41.58</td>
+    <td class="tg-buh4">40.42</td>
+    <td class="tg-0lax">33.34</td>
+    <td class="tg-buh4">20249.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:56:01</td>
+    <td class="tg-mrzz">227.63</td>
+    <td class="tg-0lax">230.12</td>
+    <td class="tg-buh4">226.39</td>
+    <td class="tg-0lax">41.98</td>
+    <td class="tg-buh4">40.14</td>
+    <td class="tg-0lax">36.92</td>
+    <td class="tg-buh4">21535.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:54:01</td>
+    <td class="tg-mrzz">227.08</td>
+    <td class="tg-0lax">230.84</td>
+    <td class="tg-buh4">224.8</td>
+    <td class="tg-0lax">41.94</td>
+    <td class="tg-buh4">40.34</td>
+    <td class="tg-0lax">36.08</td>
+    <td class="tg-buh4">21273.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:53:01</td>
+    <td class="tg-mrzz">226.35</td>
+    <td class="tg-0lax">230.6</td>
+    <td class="tg-buh4">226.85</td>
+    <td class="tg-0lax">42.64</td>
+    <td class="tg-buh4">40.76</td>
+    <td class="tg-0lax">32.96</td>
+    <td class="tg-buh4">20473.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:52:01</td>
+    <td class="tg-mrzz">226.37</td>
+    <td class="tg-0lax">230.09</td>
+    <td class="tg-buh4">226.47</td>
+    <td class="tg-0lax">41.8</td>
+    <td class="tg-buh4">40.72</td>
+    <td class="tg-0lax">32.54</td>
+    <td class="tg-buh4">20182.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:51:01</td>
+    <td class="tg-mrzz">225.89</td>
+    <td class="tg-0lax">230.65</td>
+    <td class="tg-buh4">226.96</td>
+    <td class="tg-0lax">42.0</td>
+    <td class="tg-buh4">40.44</td>
+    <td class="tg-0lax">33.06</td>
+    <td class="tg-buh4">20223.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:49:01</td>
+    <td class="tg-mrzz">226.93</td>
+    <td class="tg-0lax">230.04</td>
+    <td class="tg-buh4">226.48</td>
+    <td class="tg-0lax">42.04</td>
+    <td class="tg-buh4">40.44</td>
+    <td class="tg-0lax">32.8</td>
+    <td class="tg-buh4">20266.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:48:01</td>
+    <td class="tg-mrzz">227.42</td>
+    <td class="tg-0lax">228.75</td>
+    <td class="tg-buh4">225.93</td>
+    <td class="tg-0lax">41.54</td>
+    <td class="tg-buh4">40.22</td>
+    <td class="tg-0lax">36.14</td>
+    <td class="tg-buh4">21318.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:47:01</td>
+    <td class="tg-mrzz">226.88</td>
+    <td class="tg-0lax">230.15</td>
+    <td class="tg-buh4">225.63</td>
+    <td class="tg-0lax">41.8</td>
+    <td class="tg-buh4">39.8</td>
+    <td class="tg-0lax">35.8</td>
+    <td class="tg-buh4">21221.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:46:01</td>
+    <td class="tg-mrzz">227.41</td>
+    <td class="tg-0lax">228.73</td>
+    <td class="tg-buh4">226.12</td>
+    <td class="tg-0lax">41.74</td>
+    <td class="tg-buh4">39.8</td>
+    <td class="tg-0lax">35.64</td>
+    <td class="tg-buh4">21234.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:45:01</td>
+    <td class="tg-mrzz">226.82</td>
+    <td class="tg-0lax">228.72</td>
+    <td class="tg-buh4">227.33</td>
+    <td class="tg-0lax">41.84</td>
+    <td class="tg-buh4">40.32</td>
+    <td class="tg-0lax">32.1</td>
+    <td class="tg-buh4">19985.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:44:02</td>
+    <td class="tg-mrzz">227.38</td>
+    <td class="tg-0lax">228.86</td>
+    <td class="tg-buh4">227.19</td>
+    <td class="tg-0lax">41.8</td>
+    <td class="tg-buh4">40.76</td>
+    <td class="tg-0lax">32.52</td>
+    <td class="tg-buh4">20285.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:43:01</td>
+    <td class="tg-mrzz">223.7</td>
+    <td class="tg-0lax">230.14</td>
+    <td class="tg-buh4">228.87</td>
+    <td class="tg-0lax">42.24</td>
+    <td class="tg-buh4">40.7</td>
+    <td class="tg-0lax">32.48</td>
+    <td class="tg-buh4">20266.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:42:01</td>
+    <td class="tg-mrzz">224.25</td>
+    <td class="tg-0lax">229.91</td>
+    <td class="tg-buh4">228.44</td>
+    <td class="tg-0lax">42.0</td>
+    <td class="tg-buh4">40.52</td>
+    <td class="tg-0lax">31.8</td>
+    <td class="tg-buh4">20028.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:41:01</td>
+    <td class="tg-mrzz">226.04</td>
+    <td class="tg-0lax">228.44</td>
+    <td class="tg-buh4">226.58</td>
+    <td class="tg-0lax">41.2</td>
+    <td class="tg-buh4">40.56</td>
+    <td class="tg-0lax">33.28</td>
+    <td class="tg-buh4">20118.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:39:01</td>
+    <td class="tg-mrzz">226.72</td>
+    <td class="tg-0lax">228.51</td>
+    <td class="tg-buh4">227.59</td>
+    <td class="tg-0lax">40.86</td>
+    <td class="tg-buh4">40.82</td>
+    <td class="tg-0lax">35.02</td>
+    <td class="tg-buh4">21075.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:38:01</td>
+    <td class="tg-mrzz">228.33</td>
+    <td class="tg-0lax">228.19</td>
+    <td class="tg-buh4">226.37</td>
+    <td class="tg-0lax">41.22</td>
+    <td class="tg-buh4">39.7</td>
+    <td class="tg-0lax">35.62</td>
+    <td class="tg-buh4">21036.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:29:43</td>
+    <td class="tg-mrzz">228.4</td>
+    <td class="tg-0lax">228.79</td>
+    <td class="tg-buh4">226.31</td>
+    <td class="tg-0lax">41.46</td>
+    <td class="tg-buh4">38.88</td>
+    <td class="tg-0lax">35.84</td>
+    <td class="tg-buh4">20950.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:26:06</td>
+    <td class="tg-mrzz">226.47</td>
+    <td class="tg-0lax">227.11</td>
+    <td class="tg-buh4">228.55</td>
+    <td class="tg-0lax">41.06</td>
+    <td class="tg-buh4">38.12</td>
+    <td class="tg-0lax">32.12</td>
+    <td class="tg-buh4">19437.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:25:37</td>
+    <td class="tg-mrzz">225.53</td>
+    <td class="tg-0lax">227.54</td>
+    <td class="tg-buh4">229.28</td>
+    <td class="tg-0lax">41.1</td>
+    <td class="tg-buh4">38.16</td>
+    <td class="tg-0lax">31.34</td>
+    <td class="tg-buh4">19222.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:25:26</td>
+    <td class="tg-mrzz">225.4</td>
+    <td class="tg-0lax">228.09</td>
+    <td class="tg-buh4">228.52</td>
+    <td class="tg-0lax">41.64</td>
+    <td class="tg-buh4">38.1</td>
+    <td class="tg-0lax">31.52</td>
+    <td class="tg-buh4">19350.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:24:02</td>
+    <td class="tg-mrzz">226.2</td>
+    <td class="tg-0lax">227.88</td>
+    <td class="tg-buh4">228.06</td>
+    <td class="tg-0lax">41.6</td>
+    <td class="tg-buh4">38.38</td>
+    <td class="tg-0lax">31.4</td>
+    <td class="tg-buh4">19383.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:23:01</td>
+    <td class="tg-mrzz">227.49</td>
+    <td class="tg-0lax">227.22</td>
+    <td class="tg-buh4">228.0</td>
+    <td class="tg-0lax">41.26</td>
+    <td class="tg-buh4">38.68</td>
+    <td class="tg-0lax">34.66</td>
+    <td class="tg-buh4">20657.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:22:01</td>
+    <td class="tg-mrzz">227.69</td>
+    <td class="tg-0lax">227.82</td>
+    <td class="tg-buh4">226.28</td>
+    <td class="tg-0lax">41.76</td>
+    <td class="tg-buh4">38.94</td>
+    <td class="tg-0lax">35.6</td>
+    <td class="tg-buh4">21106.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:21:01</td>
+    <td class="tg-mrzz">228.11</td>
+    <td class="tg-0lax">227.28</td>
+    <td class="tg-buh4">226.75</td>
+    <td class="tg-0lax">41.28</td>
+    <td class="tg-buh4">39.2</td>
+    <td class="tg-0lax">35.46</td>
+    <td class="tg-buh4">20929.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:20:51</td>
+    <td class="tg-mrzz">228.47</td>
+    <td class="tg-0lax">227.83</td>
+    <td class="tg-buh4">226.05</td>
+    <td class="tg-0lax">41.26</td>
+    <td class="tg-buh4">38.52</td>
+    <td class="tg-0lax">35.54</td>
+    <td class="tg-buh4">20752.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:20:01</td>
+    <td class="tg-mrzz">228.11</td>
+    <td class="tg-0lax">227.54</td>
+    <td class="tg-buh4">228.19</td>
+    <td class="tg-0lax">40.8</td>
+    <td class="tg-buh4">38.46</td>
+    <td class="tg-0lax">31.26</td>
+    <td class="tg-buh4">19255.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:19:01</td>
+    <td class="tg-mrzz">227.39</td>
+    <td class="tg-0lax">226.92</td>
+    <td class="tg-buh4">227.06</td>
+    <td class="tg-0lax">41.34</td>
+    <td class="tg-buh4">38.4</td>
+    <td class="tg-0lax">31.96</td>
+    <td class="tg-buh4">19589.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:18:01</td>
+    <td class="tg-mrzz">226.77</td>
+    <td class="tg-0lax">227.88</td>
+    <td class="tg-buh4">228.24</td>
+    <td class="tg-0lax">41.28</td>
+    <td class="tg-buh4">38.4</td>
+    <td class="tg-0lax">30.88</td>
+    <td class="tg-buh4">19199.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:17:01</td>
+    <td class="tg-mrzz">229.1</td>
+    <td class="tg-0lax">226.64</td>
+    <td class="tg-buh4">227.19</td>
+    <td class="tg-0lax">40.88</td>
+    <td class="tg-buh4">38.78</td>
+    <td class="tg-0lax">31.2</td>
+    <td class="tg-buh4">19282.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:16:34</td>
+    <td class="tg-mrzz">227.43</td>
+    <td class="tg-0lax">228.51</td>
+    <td class="tg-buh4">228.16</td>
+    <td class="tg-0lax">41.0</td>
+    <td class="tg-buh4">38.56</td>
+    <td class="tg-0lax">31.18</td>
+    <td class="tg-buh4">19201.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:16:01</td>
+    <td class="tg-mrzz">227.53</td>
+    <td class="tg-0lax">227.34</td>
+    <td class="tg-buh4">228.55</td>
+    <td class="tg-0lax">41.16</td>
+    <td class="tg-buh4">39.32</td>
+    <td class="tg-0lax">31.68</td>
+    <td class="tg-buh4">19535.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:15:01</td>
+    <td class="tg-mrzz">228.2</td>
+    <td class="tg-0lax">227.08</td>
+    <td class="tg-buh4">228.68</td>
+    <td class="tg-0lax">41.52</td>
+    <td class="tg-buh4">38.92</td>
+    <td class="tg-0lax">31.36</td>
+    <td class="tg-buh4">19442.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:14:47</td>
+    <td class="tg-mrzz">226.54</td>
+    <td class="tg-0lax">226.61</td>
+    <td class="tg-buh4">230.5</td>
+    <td class="tg-0lax">41.66</td>
+    <td class="tg-buh4">38.6</td>
+    <td class="tg-0lax">31.0</td>
+    <td class="tg-buh4">19292.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:14:01</td>
+    <td class="tg-mrzz">226.76</td>
+    <td class="tg-0lax">227.05</td>
+    <td class="tg-buh4">229.18</td>
+    <td class="tg-0lax">41.54</td>
+    <td class="tg-buh4">38.38</td>
+    <td class="tg-0lax">34.32</td>
+    <td class="tg-buh4">20560.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:13:01</td>
+    <td class="tg-mrzz">227.53</td>
+    <td class="tg-0lax">227.58</td>
+    <td class="tg-buh4">227.96</td>
+    <td class="tg-0lax">41.62</td>
+    <td class="tg-buh4">37.98</td>
+    <td class="tg-0lax">34.8</td>
+    <td class="tg-buh4">20551.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:12:01</td>
+    <td class="tg-mrzz">227.57</td>
+    <td class="tg-0lax">226.49</td>
+    <td class="tg-buh4">227.97</td>
+    <td class="tg-0lax">41.78</td>
+    <td class="tg-buh4">38.44</td>
+    <td class="tg-0lax">35.62</td>
+    <td class="tg-buh4">20884.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:11:01</td>
+    <td class="tg-mrzz">225.66</td>
+    <td class="tg-0lax">228.94</td>
+    <td class="tg-buh4">227.96</td>
+    <td class="tg-0lax">41.5</td>
+    <td class="tg-buh4">37.98</td>
+    <td class="tg-0lax">32.48</td>
+    <td class="tg-buh4">19547.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:10:01</td>
+    <td class="tg-mrzz">225.93</td>
+    <td class="tg-0lax">227.36</td>
+    <td class="tg-buh4">230.76</td>
+    <td class="tg-0lax">40.66</td>
+    <td class="tg-buh4">38.36</td>
+    <td class="tg-0lax">32.38</td>
+    <td class="tg-buh4">19369.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:09:01</td>
+    <td class="tg-mrzz">226.52</td>
+    <td class="tg-0lax">226.49</td>
+    <td class="tg-buh4">229.54</td>
+    <td class="tg-0lax">40.76</td>
+    <td class="tg-buh4">38.18</td>
+    <td class="tg-0lax">32.18</td>
+    <td class="tg-buh4">19298.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:08:01</td>
+    <td class="tg-mrzz">228.52</td>
+    <td class="tg-0lax">224.27</td>
+    <td class="tg-buh4">230.92</td>
+    <td class="tg-0lax">40.14</td>
+    <td class="tg-buh4">38.42</td>
+    <td class="tg-0lax">32.48</td>
+    <td class="tg-buh4">19333.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:07:01</td>
+    <td class="tg-mrzz">227.38</td>
+    <td class="tg-0lax">226.75</td>
+    <td class="tg-buh4">227.82</td>
+    <td class="tg-0lax">40.78</td>
+    <td class="tg-buh4">38.08</td>
+    <td class="tg-0lax">31.08</td>
+    <td class="tg-buh4">19070.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:06:01</td>
+    <td class="tg-mrzz">229.79</td>
+    <td class="tg-0lax">226.3</td>
+    <td class="tg-buh4">227.36</td>
+    <td class="tg-0lax">40.42</td>
+    <td class="tg-buh4">37.98</td>
+    <td class="tg-0lax">35.28</td>
+    <td class="tg-buh4">20421.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:05:01</td>
+    <td class="tg-mrzz">228.59</td>
+    <td class="tg-0lax">226.25</td>
+    <td class="tg-buh4">228.46</td>
+    <td class="tg-0lax">40.58</td>
+    <td class="tg-buh4">38.3</td>
+    <td class="tg-0lax">34.64</td>
+    <td class="tg-buh4">20387.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:04:01</td>
+    <td class="tg-mrzz">227.57</td>
+    <td class="tg-0lax">227.31</td>
+    <td class="tg-buh4">227.4</td>
+    <td class="tg-0lax">40.32</td>
+    <td class="tg-buh4">37.98</td>
+    <td class="tg-0lax">35.22</td>
+    <td class="tg-buh4">20435.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:03:01</td>
+    <td class="tg-mrzz">228.13</td>
+    <td class="tg-0lax">227.57</td>
+    <td class="tg-buh4">227.87</td>
+    <td class="tg-0lax">39.84</td>
+    <td class="tg-buh4">37.74</td>
+    <td class="tg-0lax">31.54</td>
+    <td class="tg-buh4">18937.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:02:01</td>
+    <td class="tg-mrzz">227.9</td>
+    <td class="tg-0lax">228.89</td>
+    <td class="tg-buh4">227.82</td>
+    <td class="tg-0lax">40.02</td>
+    <td class="tg-buh4">37.52</td>
+    <td class="tg-0lax">32.08</td>
+    <td class="tg-buh4">19074.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:01:01</td>
+    <td class="tg-mrzz">226.46</td>
+    <td class="tg-0lax">228.54</td>
+    <td class="tg-buh4">228.75</td>
+    <td class="tg-0lax">40.32</td>
+    <td class="tg-buh4">37.74</td>
+    <td class="tg-0lax">31.7</td>
+    <td class="tg-buh4">19087.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 10:00:01</td>
+    <td class="tg-mrzz">225.63</td>
+    <td class="tg-0lax">230.22</td>
+    <td class="tg-buh4">228.43</td>
+    <td class="tg-0lax">40.7</td>
+    <td class="tg-buh4">37.54</td>
+    <td class="tg-0lax">31.88</td>
+    <td class="tg-buh4">19160.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:59:01</td>
+    <td class="tg-mrzz">228.24</td>
+    <td class="tg-0lax">230.21</td>
+    <td class="tg-buh4">225.87</td>
+    <td class="tg-0lax">39.68</td>
+    <td class="tg-buh4">37.08</td>
+    <td class="tg-0lax">31.96</td>
+    <td class="tg-buh4">18966.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:58:01</td>
+    <td class="tg-mrzz">227.01</td>
+    <td class="tg-0lax">231.36</td>
+    <td class="tg-buh4">226.11</td>
+    <td class="tg-0lax">40.16</td>
+    <td class="tg-buh4">37.62</td>
+    <td class="tg-0lax">31.9</td>
+    <td class="tg-buh4">19102.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:57:01</td>
+    <td class="tg-mrzz">229.33</td>
+    <td class="tg-0lax">229.07</td>
+    <td class="tg-buh4">225.55</td>
+    <td class="tg-0lax">39.84</td>
+    <td class="tg-buh4">37.62</td>
+    <td class="tg-0lax">34.28</td>
+    <td class="tg-buh4">20045.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:56:01</td>
+    <td class="tg-mrzz">230.37</td>
+    <td class="tg-0lax">227.37</td>
+    <td class="tg-buh4">226.47</td>
+    <td class="tg-0lax">39.34</td>
+    <td class="tg-buh4">37.08</td>
+    <td class="tg-0lax">34.58</td>
+    <td class="tg-buh4">19953.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:55:01</td>
+    <td class="tg-mrzz">230.62</td>
+    <td class="tg-0lax">227.8</td>
+    <td class="tg-buh4">225.94</td>
+    <td class="tg-0lax">39.1</td>
+    <td class="tg-buh4">37.04</td>
+    <td class="tg-0lax">34.38</td>
+    <td class="tg-buh4">19867.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:54:01</td>
+    <td class="tg-mrzz">229.62</td>
+    <td class="tg-0lax">226.95</td>
+    <td class="tg-buh4">227.59</td>
+    <td class="tg-0lax">38.94</td>
+    <td class="tg-buh4">37.82</td>
+    <td class="tg-0lax">30.26</td>
+    <td class="tg-buh4">18518.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:53:01</td>
+    <td class="tg-mrzz">228.98</td>
+    <td class="tg-0lax">225.85</td>
+    <td class="tg-buh4">229.0</td>
+    <td class="tg-0lax">39.32</td>
+    <td class="tg-buh4">36.6</td>
+    <td class="tg-0lax">29.68</td>
+    <td class="tg-buh4">18301.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:52:01</td>
+    <td class="tg-mrzz">229.12</td>
+    <td class="tg-0lax">226.19</td>
+    <td class="tg-buh4">229.33</td>
+    <td class="tg-0lax">38.74</td>
+    <td class="tg-buh4">35.3</td>
+    <td class="tg-0lax">28.76</td>
+    <td class="tg-buh4">17698.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:51:01</td>
+    <td class="tg-mrzz">228.69</td>
+    <td class="tg-0lax">227.37</td>
+    <td class="tg-buh4">229.33</td>
+    <td class="tg-0lax">38.24</td>
+    <td class="tg-buh4">34.9</td>
+    <td class="tg-0lax">28.82</td>
+    <td class="tg-buh4">17509.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:50:01</td>
+    <td class="tg-mrzz">227.59</td>
+    <td class="tg-0lax">228.61</td>
+    <td class="tg-buh4">228.7</td>
+    <td class="tg-0lax">39.88</td>
+    <td class="tg-buh4">35.16</td>
+    <td class="tg-0lax">29.12</td>
+    <td class="tg-buh4">17996.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:49:01</td>
+    <td class="tg-mrzz">229.17</td>
+    <td class="tg-0lax">228.15</td>
+    <td class="tg-buh4">226.8</td>
+    <td class="tg-0lax">40.36</td>
+    <td class="tg-buh4">35.18</td>
+    <td class="tg-0lax">32.6</td>
+    <td class="tg-buh4">19456.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:48:01</td>
+    <td class="tg-mrzz">228.7</td>
+    <td class="tg-0lax">228.6</td>
+    <td class="tg-buh4">227.41</td>
+    <td class="tg-0lax">39.62</td>
+    <td class="tg-buh4">35.06</td>
+    <td class="tg-0lax">31.4</td>
+    <td class="tg-buh4">18996.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:47:01</td>
+    <td class="tg-mrzz">228.1</td>
+    <td class="tg-0lax">228.9</td>
+    <td class="tg-buh4">227.18</td>
+    <td class="tg-0lax">39.74</td>
+    <td class="tg-buh4">34.54</td>
+    <td class="tg-0lax">32.06</td>
+    <td class="tg-buh4">19100.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:46:01</td>
+    <td class="tg-mrzz">227.84</td>
+    <td class="tg-0lax">228.91</td>
+    <td class="tg-buh4">229.04</td>
+    <td class="tg-0lax">39.98</td>
+    <td class="tg-buh4">34.02</td>
+    <td class="tg-0lax">28.92</td>
+    <td class="tg-buh4">17769.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:45:01</td>
+    <td class="tg-mrzz">226.19</td>
+    <td class="tg-0lax">229.58</td>
+    <td class="tg-buh4">229.56</td>
+    <td class="tg-0lax">39.94</td>
+    <td class="tg-buh4">34.28</td>
+    <td class="tg-0lax">29.12</td>
+    <td class="tg-buh4">17921.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:44:01</td>
+    <td class="tg-mrzz">226.21</td>
+    <td class="tg-0lax">228.65</td>
+    <td class="tg-buh4">231.26</td>
+    <td class="tg-0lax">39.02</td>
+    <td class="tg-buh4">34.2</td>
+    <td class="tg-0lax">29.04</td>
+    <td class="tg-buh4">17639.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:43:01</td>
+    <td class="tg-mrzz">224.51</td>
+    <td class="tg-0lax">229.68</td>
+    <td class="tg-buh4">231.14</td>
+    <td class="tg-0lax">39.48</td>
+    <td class="tg-buh4">34.04</td>
+    <td class="tg-0lax">28.9</td>
+    <td class="tg-buh4">17667.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:42:01</td>
+    <td class="tg-mrzz">225.85</td>
+    <td class="tg-0lax">229.46</td>
+    <td class="tg-buh4">229.32</td>
+    <td class="tg-0lax">39.98</td>
+    <td class="tg-buh4">33.94</td>
+    <td class="tg-0lax">28.88</td>
+    <td class="tg-buh4">17763.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:41:01</td>
+    <td class="tg-mrzz">227.48</td>
+    <td class="tg-0lax">229.38</td>
+    <td class="tg-buh4">228.12</td>
+    <td class="tg-0lax">38.9</td>
+    <td class="tg-buh4">34.12</td>
+    <td class="tg-0lax">28.74</td>
+    <td class="tg-buh4">17592.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:40:01</td>
+    <td class="tg-mrzz">226.65</td>
+    <td class="tg-0lax">229.69</td>
+    <td class="tg-buh4">228.67</td>
+    <td class="tg-0lax">38.82</td>
+    <td class="tg-buh4">34.22</td>
+    <td class="tg-0lax">32.42</td>
+    <td class="tg-buh4">19005.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:39:01</td>
+    <td class="tg-mrzz">225.75</td>
+    <td class="tg-0lax">229.25</td>
+    <td class="tg-buh4">230.38</td>
+    <td class="tg-0lax">38.72</td>
+    <td class="tg-buh4">34.2</td>
+    <td class="tg-0lax">30.78</td>
+    <td class="tg-buh4">18560.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:38:01</td>
+    <td class="tg-mrzz">227.16</td>
+    <td class="tg-0lax">227.74</td>
+    <td class="tg-buh4">229.8</td>
+    <td class="tg-0lax">37.96</td>
+    <td class="tg-buh4">35.06</td>
+    <td class="tg-0lax">30.82</td>
+    <td class="tg-buh4">18584.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:37:01</td>
+    <td class="tg-mrzz">226.29</td>
+    <td class="tg-0lax">228.13</td>
+    <td class="tg-buh4">228.89</td>
+    <td class="tg-0lax">37.26</td>
+    <td class="tg-buh4">34.82</td>
+    <td class="tg-0lax">28.42</td>
+    <td class="tg-buh4">17376.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:36:01</td>
+    <td class="tg-mrzz">228.65</td>
+    <td class="tg-0lax">229.78</td>
+    <td class="tg-buh4">227.94</td>
+    <td class="tg-0lax">36.58</td>
+    <td class="tg-buh4">34.18</td>
+    <td class="tg-0lax">27.94</td>
+    <td class="tg-buh4">16931.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:35:01</td>
+    <td class="tg-mrzz">228.2</td>
+    <td class="tg-0lax">230.01</td>
+    <td class="tg-buh4">228.16</td>
+    <td class="tg-0lax">37.14</td>
+    <td class="tg-buh4">34.22</td>
+    <td class="tg-0lax">27.94</td>
+    <td class="tg-buh4">17082.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:34:01</td>
+    <td class="tg-mrzz">228.9</td>
+    <td class="tg-0lax">229.6</td>
+    <td class="tg-buh4">227.36</td>
+    <td class="tg-0lax">37.08</td>
+    <td class="tg-buh4">34.48</td>
+    <td class="tg-0lax">27.44</td>
+    <td class="tg-buh4">17027.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:33:01</td>
+    <td class="tg-mrzz">227.79</td>
+    <td class="tg-0lax">229.66</td>
+    <td class="tg-buh4">226.94</td>
+    <td class="tg-0lax">37.42</td>
+    <td class="tg-buh4">34.38</td>
+    <td class="tg-0lax">27.42</td>
+    <td class="tg-buh4">17039.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:32:02</td>
+    <td class="tg-mrzz">228.61</td>
+    <td class="tg-0lax">229.21</td>
+    <td class="tg-buh4">228.82</td>
+    <td class="tg-0lax">37.02</td>
+    <td class="tg-buh4">34.6</td>
+    <td class="tg-0lax">30.64</td>
+    <td class="tg-buh4">18271.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:31:02</td>
+    <td class="tg-mrzz">227.37</td>
+    <td class="tg-0lax">229.64</td>
+    <td class="tg-buh4">228.67</td>
+    <td class="tg-0lax">37.4</td>
+    <td class="tg-buh4">34.76</td>
+    <td class="tg-0lax">29.84</td>
+    <td class="tg-buh4">18286.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:30:02</td>
+    <td class="tg-mrzz">227.03</td>
+    <td class="tg-0lax">231.24</td>
+    <td class="tg-buh4">228.4</td>
+    <td class="tg-0lax">37.7</td>
+    <td class="tg-buh4">34.36</td>
+    <td class="tg-0lax">29.9</td>
+    <td class="tg-buh4">18286.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:29:01</td>
+    <td class="tg-mrzz">227.58</td>
+    <td class="tg-0lax">230.49</td>
+    <td class="tg-buh4">228.67</td>
+    <td class="tg-0lax">37.52</td>
+    <td class="tg-buh4">34.28</td>
+    <td class="tg-0lax">26.1</td>
+    <td class="tg-buh4">16804.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:28:01</td>
+    <td class="tg-mrzz">227.82</td>
+    <td class="tg-0lax">231.27</td>
+    <td class="tg-buh4">228.86</td>
+    <td class="tg-0lax">37.44</td>
+    <td class="tg-buh4">33.92</td>
+    <td class="tg-0lax">26.68</td>
+    <td class="tg-buh4">16872.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:27:01</td>
+    <td class="tg-mrzz">227.56</td>
+    <td class="tg-0lax">230.29</td>
+    <td class="tg-buh4">229.32</td>
+    <td class="tg-0lax">37.64</td>
+    <td class="tg-buh4">34.14</td>
+    <td class="tg-0lax">26.58</td>
+    <td class="tg-buh4">16872.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:26:01</td>
+    <td class="tg-mrzz">225.89</td>
+    <td class="tg-0lax">230.08</td>
+    <td class="tg-buh4">229.67</td>
+    <td class="tg-0lax">37.72</td>
+    <td class="tg-buh4">34.34</td>
+    <td class="tg-0lax">26.56</td>
+    <td class="tg-buh4">16955.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:25:02</td>
+    <td class="tg-mrzz">227.48</td>
+    <td class="tg-0lax">229.79</td>
+    <td class="tg-buh4">229.79</td>
+    <td class="tg-0lax">37.66</td>
+    <td class="tg-buh4">34.24</td>
+    <td class="tg-0lax">26.26</td>
+    <td class="tg-buh4">16884.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:24:02</td>
+    <td class="tg-mrzz">226.93</td>
+    <td class="tg-0lax">229.52</td>
+    <td class="tg-buh4">229.36</td>
+    <td class="tg-0lax">37.66</td>
+    <td class="tg-buh4">34.24</td>
+    <td class="tg-0lax">28.64</td>
+    <td class="tg-buh4">17956.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:23:02</td>
+    <td class="tg-mrzz">226.02</td>
+    <td class="tg-0lax">229.45</td>
+    <td class="tg-buh4">230.93</td>
+    <td class="tg-0lax">37.74</td>
+    <td class="tg-buh4">34.22</td>
+    <td class="tg-0lax">28.46</td>
+    <td class="tg-buh4">17901.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:22:02</td>
+    <td class="tg-mrzz">228.82</td>
+    <td class="tg-0lax">228.6</td>
+    <td class="tg-buh4">229.32</td>
+    <td class="tg-0lax">37.94</td>
+    <td class="tg-buh4">33.3</td>
+    <td class="tg-0lax">29.16</td>
+    <td class="tg-buh4">18097.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:21:02</td>
+    <td class="tg-mrzz">227.6</td>
+    <td class="tg-0lax">229.31</td>
+    <td class="tg-buh4">230.95</td>
+    <td class="tg-0lax">37.58</td>
+    <td class="tg-buh4">33.36</td>
+    <td class="tg-0lax">25.48</td>
+    <td class="tg-buh4">16518.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:20:02</td>
+    <td class="tg-mrzz">226.36</td>
+    <td class="tg-0lax">230.64</td>
+    <td class="tg-buh4">230.35</td>
+    <td class="tg-0lax">37.62</td>
+    <td class="tg-buh4">33.5</td>
+    <td class="tg-0lax">25.62</td>
+    <td class="tg-buh4">16655.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:19:02</td>
+    <td class="tg-mrzz">226.42</td>
+    <td class="tg-0lax">229.42</td>
+    <td class="tg-buh4">231.9</td>
+    <td class="tg-0lax">37.48</td>
+    <td class="tg-buh4">33.64</td>
+    <td class="tg-0lax">26.06</td>
+    <td class="tg-buh4">16784.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:18:02</td>
+    <td class="tg-mrzz">226.26</td>
+    <td class="tg-0lax">230.59</td>
+    <td class="tg-buh4">230.02</td>
+    <td class="tg-0lax">37.44</td>
+    <td class="tg-buh4">33.14</td>
+    <td class="tg-0lax">25.76</td>
+    <td class="tg-buh4">16546.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:17:02</td>
+    <td class="tg-mrzz">226.47</td>
+    <td class="tg-0lax">230.71</td>
+    <td class="tg-buh4">230.6</td>
+    <td class="tg-0lax">37.56</td>
+    <td class="tg-buh4">34.82</td>
+    <td class="tg-0lax">26.34</td>
+    <td class="tg-buh4">16813.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:16:02</td>
+    <td class="tg-mrzz">226.66</td>
+    <td class="tg-0lax">230.63</td>
+    <td class="tg-buh4">230.69</td>
+    <td class="tg-0lax">37.86</td>
+    <td class="tg-buh4">32.92</td>
+    <td class="tg-0lax">26.18</td>
+    <td class="tg-buh4">16745.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:15:02</td>
+    <td class="tg-mrzz">227.68</td>
+    <td class="tg-0lax">228.96</td>
+    <td class="tg-buh4">229.93</td>
+    <td class="tg-0lax">37.78</td>
+    <td class="tg-buh4">32.82</td>
+    <td class="tg-0lax">29.14</td>
+    <td class="tg-buh4">17955.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:14:02</td>
+    <td class="tg-mrzz">227.82</td>
+    <td class="tg-0lax">230.08</td>
+    <td class="tg-buh4">229.49</td>
+    <td class="tg-0lax">37.42</td>
+    <td class="tg-buh4">33.8</td>
+    <td class="tg-0lax">29.4</td>
+    <td class="tg-buh4">18194.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:13:02</td>
+    <td class="tg-mrzz">225.08</td>
+    <td class="tg-0lax">230.49</td>
+    <td class="tg-buh4">231.6</td>
+    <td class="tg-0lax">37.04</td>
+    <td class="tg-buh4">32.84</td>
+    <td class="tg-0lax">28.34</td>
+    <td class="tg-buh4">17388.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:12:01</td>
+    <td class="tg-mrzz">226.63</td>
+    <td class="tg-0lax">227.28</td>
+    <td class="tg-buh4">233.92</td>
+    <td class="tg-0lax">36.94</td>
+    <td class="tg-buh4">32.96</td>
+    <td class="tg-0lax">26.34</td>
+    <td class="tg-buh4">16572.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:11:01</td>
+    <td class="tg-mrzz">228.04</td>
+    <td class="tg-0lax">226.3</td>
+    <td class="tg-buh4">232.99</td>
+    <td class="tg-0lax">36.96</td>
+    <td class="tg-buh4">33.04</td>
+    <td class="tg-0lax">26.34</td>
+    <td class="tg-buh4">16719.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:10:01</td>
+    <td class="tg-mrzz">225.1</td>
+    <td class="tg-0lax">226.85</td>
+    <td class="tg-buh4">232.21</td>
+    <td class="tg-0lax">37.24</td>
+    <td class="tg-buh4">33.04</td>
+    <td class="tg-0lax">25.66</td>
+    <td class="tg-buh4">16445.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:09:01</td>
+    <td class="tg-mrzz">227.64</td>
+    <td class="tg-0lax">227.52</td>
+    <td class="tg-buh4">232.86</td>
+    <td class="tg-0lax">36.88</td>
+    <td class="tg-buh4">32.94</td>
+    <td class="tg-0lax">26.18</td>
+    <td class="tg-buh4">16591.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:08:01</td>
+    <td class="tg-mrzz">226.55</td>
+    <td class="tg-0lax">228.64</td>
+    <td class="tg-buh4">231.32</td>
+    <td class="tg-0lax">36.78</td>
+    <td class="tg-buh4">32.96</td>
+    <td class="tg-0lax">26.4</td>
+    <td class="tg-buh4">16674.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:07:01</td>
+    <td class="tg-mrzz">227.47</td>
+    <td class="tg-0lax">228.79</td>
+    <td class="tg-buh4">229.8</td>
+    <td class="tg-0lax">36.46</td>
+    <td class="tg-buh4">32.88</td>
+    <td class="tg-0lax">29.12</td>
+    <td class="tg-buh4">17699.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:06:01</td>
+    <td class="tg-mrzz">226.93</td>
+    <td class="tg-0lax">230.94</td>
+    <td class="tg-buh4">228.29</td>
+    <td class="tg-0lax">36.16</td>
+    <td class="tg-buh4">32.56</td>
+    <td class="tg-0lax">29.38</td>
+    <td class="tg-buh4">17627.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:05:01</td>
+    <td class="tg-mrzz">227.22</td>
+    <td class="tg-0lax">231.24</td>
+    <td class="tg-buh4">229.08</td>
+    <td class="tg-0lax">36.08</td>
+    <td class="tg-buh4">32.5</td>
+    <td class="tg-0lax">29.52</td>
+    <td class="tg-buh4">17619.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:04:01</td>
+    <td class="tg-mrzz">226.09</td>
+    <td class="tg-0lax">230.04</td>
+    <td class="tg-buh4">231.87</td>
+    <td class="tg-0lax">34.86</td>
+    <td class="tg-buh4">32.52</td>
+    <td class="tg-0lax">26.28</td>
+    <td class="tg-buh4">16009.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:03:01</td>
+    <td class="tg-mrzz">225.38</td>
+    <td class="tg-0lax">230.39</td>
+    <td class="tg-buh4">232.78</td>
+    <td class="tg-0lax">34.9</td>
+    <td class="tg-buh4">32.62</td>
+    <td class="tg-0lax">26.22</td>
+    <td class="tg-buh4">16021.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:02:01</td>
+    <td class="tg-mrzz">226.27</td>
+    <td class="tg-0lax">228.4</td>
+    <td class="tg-buh4">233.55</td>
+    <td class="tg-0lax">34.48</td>
+    <td class="tg-buh4">32.68</td>
+    <td class="tg-0lax">25.92</td>
+    <td class="tg-buh4">15835.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:01:01</td>
+    <td class="tg-mrzz">225.32</td>
+    <td class="tg-0lax">229.42</td>
+    <td class="tg-buh4">232.57</td>
+    <td class="tg-0lax">34.68</td>
+    <td class="tg-buh4">32.68</td>
+    <td class="tg-0lax">25.56</td>
+    <td class="tg-buh4">15811.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 09:00:01</td>
+    <td class="tg-mrzz">227.06</td>
+    <td class="tg-0lax">229.98</td>
+    <td class="tg-buh4">231.36</td>
+    <td class="tg-0lax">35.04</td>
+    <td class="tg-buh4">32.78</td>
+    <td class="tg-0lax">26.58</td>
+    <td class="tg-buh4">16092.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:59:01</td>
+    <td class="tg-mrzz">227.86</td>
+    <td class="tg-0lax">229.71</td>
+    <td class="tg-buh4">231.46</td>
+    <td class="tg-0lax">35.18</td>
+    <td class="tg-buh4">33.02</td>
+    <td class="tg-0lax">29.04</td>
+    <td class="tg-buh4">17332.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:58:01</td>
+    <td class="tg-mrzz">228.23</td>
+    <td class="tg-0lax">229.93</td>
+    <td class="tg-buh4">230.44</td>
+    <td class="tg-0lax">38.06</td>
+    <td class="tg-buh4">32.24</td>
+    <td class="tg-0lax">27.74</td>
+    <td class="tg-buh4">17815.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:57:01</td>
+    <td class="tg-mrzz">228.66</td>
+    <td class="tg-0lax">229.31</td>
+    <td class="tg-buh4">229.91</td>
+    <td class="tg-0lax">35.1</td>
+    <td class="tg-buh4">31.64</td>
+    <td class="tg-0lax">27.68</td>
+    <td class="tg-buh4">16872.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:56:01</td>
+    <td class="tg-mrzz">227.85</td>
+    <td class="tg-0lax">229.41</td>
+    <td class="tg-buh4">232.73</td>
+    <td class="tg-0lax">34.72</td>
+    <td class="tg-buh4">31.5</td>
+    <td class="tg-0lax">22.38</td>
+    <td class="tg-buh4">15138.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:55:01</td>
+    <td class="tg-mrzz">226.42</td>
+    <td class="tg-0lax">230.19</td>
+    <td class="tg-buh4">232.79</td>
+    <td class="tg-0lax">35.26</td>
+    <td class="tg-buh4">31.46</td>
+    <td class="tg-0lax">21.86</td>
+    <td class="tg-buh4">15125.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:54:01</td>
+    <td class="tg-mrzz">227.17</td>
+    <td class="tg-0lax">229.43</td>
+    <td class="tg-buh4">233.34</td>
+    <td class="tg-0lax">35.08</td>
+    <td class="tg-buh4">31.78</td>
+    <td class="tg-0lax">21.74</td>
+    <td class="tg-buh4">15120.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:53:27</td>
+    <td class="tg-mrzz">225.79</td>
+    <td class="tg-0lax">230.09</td>
+    <td class="tg-buh4">233.13</td>
+    <td class="tg-0lax">37.82</td>
+    <td class="tg-buh4">31.58</td>
+    <td class="tg-0lax">21.88</td>
+    <td class="tg-buh4">15962.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:53:01</td>
+    <td class="tg-mrzz">225.05</td>
+    <td class="tg-0lax">229.72</td>
+    <td class="tg-buh4">232.2</td>
+    <td class="tg-0lax">33.28</td>
+    <td class="tg-buh4">31.86</td>
+    <td class="tg-0lax">21.46</td>
+    <td class="tg-buh4">14753.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:52:33</td>
+    <td class="tg-mrzz">226.73</td>
+    <td class="tg-0lax">228.44</td>
+    <td class="tg-buh4">232.01</td>
+    <td class="tg-0lax">33.16</td>
+    <td class="tg-buh4">31.48</td>
+    <td class="tg-0lax">21.6</td>
+    <td class="tg-buh4">14648.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:52:01</td>
+    <td class="tg-mrzz">226.99</td>
+    <td class="tg-0lax">228.89</td>
+    <td class="tg-buh4">232.26</td>
+    <td class="tg-0lax">33.22</td>
+    <td class="tg-buh4">31.84</td>
+    <td class="tg-0lax">22.12</td>
+    <td class="tg-buh4">14885.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:51:01</td>
+    <td class="tg-mrzz">228.0</td>
+    <td class="tg-0lax">227.38</td>
+    <td class="tg-buh4">231.96</td>
+    <td class="tg-0lax">32.98</td>
+    <td class="tg-buh4">32.52</td>
+    <td class="tg-0lax">21.8</td>
+    <td class="tg-buh4">14893.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:50:01</td>
+    <td class="tg-mrzz">228.28</td>
+    <td class="tg-0lax">226.77</td>
+    <td class="tg-buh4">231.98</td>
+    <td class="tg-0lax">32.88</td>
+    <td class="tg-buh4">30.12</td>
+    <td class="tg-0lax">24.64</td>
+    <td class="tg-buh4">15866.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:49:01</td>
+    <td class="tg-mrzz">230.13</td>
+    <td class="tg-0lax">225.45</td>
+    <td class="tg-buh4">231.87</td>
+    <td class="tg-0lax">33.06</td>
+    <td class="tg-buh4">30.1</td>
+    <td class="tg-0lax">24.04</td>
+    <td class="tg-buh4">15734.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:48:01</td>
+    <td class="tg-mrzz">229.94</td>
+    <td class="tg-0lax">225.21</td>
+    <td class="tg-buh4">232.76</td>
+    <td class="tg-0lax">32.82</td>
+    <td class="tg-buh4">31.9</td>
+    <td class="tg-0lax">24.52</td>
+    <td class="tg-buh4">15958.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:47:21</td>
+    <td class="tg-mrzz">229.76</td>
+    <td class="tg-0lax">225.18</td>
+    <td class="tg-buh4">233.71</td>
+    <td class="tg-0lax">32.74</td>
+    <td class="tg-buh4">30.42</td>
+    <td class="tg-0lax">21.52</td>
+    <td class="tg-buh4">14633.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:47:01</td>
+    <td class="tg-mrzz">228.57</td>
+    <td class="tg-0lax">224.74</td>
+    <td class="tg-buh4">233.18</td>
+    <td class="tg-0lax">33.2</td>
+    <td class="tg-buh4">31.38</td>
+    <td class="tg-0lax">21.16</td>
+    <td class="tg-buh4">14892.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:46:01</td>
+    <td class="tg-mrzz">226.87</td>
+    <td class="tg-0lax">227.48</td>
+    <td class="tg-buh4">233.69</td>
+    <td class="tg-0lax">33.58</td>
+    <td class="tg-buh4">30.68</td>
+    <td class="tg-0lax">20.84</td>
+    <td class="tg-buh4">14655.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:45:01</td>
+    <td class="tg-mrzz">228.59</td>
+    <td class="tg-0lax">227.56</td>
+    <td class="tg-buh4">232.71</td>
+    <td class="tg-0lax">33.42</td>
+    <td class="tg-buh4">30.8</td>
+    <td class="tg-0lax">20.68</td>
+    <td class="tg-buh4">14588.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:44:01</td>
+    <td class="tg-mrzz">229.46</td>
+    <td class="tg-0lax">226.75</td>
+    <td class="tg-buh4">232.83</td>
+    <td class="tg-0lax">33.02</td>
+    <td class="tg-buh4">30.18</td>
+    <td class="tg-0lax">21.3</td>
+    <td class="tg-buh4">14620.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:43:58</td>
+    <td class="tg-mrzz">229.4</td>
+    <td class="tg-0lax">226.29</td>
+    <td class="tg-buh4">233.09</td>
+    <td class="tg-0lax">32.9</td>
+    <td class="tg-buh4">29.86</td>
+    <td class="tg-0lax">20.88</td>
+    <td class="tg-buh4">14351.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:43:01</td>
+    <td class="tg-mrzz">228.44</td>
+    <td class="tg-0lax">226.95</td>
+    <td class="tg-buh4">233.34</td>
+    <td class="tg-0lax">32.4</td>
+    <td class="tg-buh4">31.36</td>
+    <td class="tg-0lax">20.6</td>
+    <td class="tg-buh4">14651.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:42:01</td>
+    <td class="tg-mrzz">229.78</td>
+    <td class="tg-0lax">226.61</td>
+    <td class="tg-buh4">233.52</td>
+    <td class="tg-0lax">32.32</td>
+    <td class="tg-buh4">29.06</td>
+    <td class="tg-0lax">23.28</td>
+    <td class="tg-buh4">15267.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:41:01</td>
+    <td class="tg-mrzz">228.44</td>
+    <td class="tg-0lax">228.15</td>
+    <td class="tg-buh4">231.95</td>
+    <td class="tg-0lax">31.34</td>
+    <td class="tg-buh4">28.16</td>
+    <td class="tg-0lax">23.66</td>
+    <td class="tg-buh4">14971.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:40:01</td>
+    <td class="tg-mrzz">227.74</td>
+    <td class="tg-0lax">229.01</td>
+    <td class="tg-buh4">232.15</td>
+    <td class="tg-0lax">31.62</td>
+    <td class="tg-buh4">28.12</td>
+    <td class="tg-0lax">23.12</td>
+    <td class="tg-buh4">14929.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:39:01</td>
+    <td class="tg-mrzz">227.34</td>
+    <td class="tg-0lax">228.81</td>
+    <td class="tg-buh4">233.52</td>
+    <td class="tg-0lax">31.48</td>
+    <td class="tg-buh4">28.08</td>
+    <td class="tg-0lax">19.36</td>
+    <td class="tg-buh4">13481.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:38:01</td>
+    <td class="tg-mrzz">226.73</td>
+    <td class="tg-0lax">228.86</td>
+    <td class="tg-buh4">234.37</td>
+    <td class="tg-0lax">31.32</td>
+    <td class="tg-buh4">28.22</td>
+    <td class="tg-0lax">19.4</td>
+    <td class="tg-buh4">13482.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:37:01</td>
+    <td class="tg-mrzz">228.9</td>
+    <td class="tg-0lax">227.4</td>
+    <td class="tg-buh4">233.99</td>
+    <td class="tg-0lax">31.2</td>
+    <td class="tg-buh4">28.18</td>
+    <td class="tg-0lax">19.32</td>
+    <td class="tg-buh4">13402.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:36:01</td>
+    <td class="tg-mrzz">227.49</td>
+    <td class="tg-0lax">228.43</td>
+    <td class="tg-buh4">233.13</td>
+    <td class="tg-0lax">31.32</td>
+    <td class="tg-buh4">28.16</td>
+    <td class="tg-0lax">19.66</td>
+    <td class="tg-buh4">13571.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:35:01</td>
+    <td class="tg-mrzz">227.73</td>
+    <td class="tg-0lax">227.36</td>
+    <td class="tg-buh4">234.67</td>
+    <td class="tg-0lax">31.58</td>
+    <td class="tg-buh4">28.14</td>
+    <td class="tg-0lax">19.62</td>
+    <td class="tg-buh4">13625.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:34:43</td>
+    <td class="tg-mrzz">224.94</td>
+    <td class="tg-0lax">223.56</td>
+    <td class="tg-buh4">231.7</td>
+    <td class="tg-0lax">32.0</td>
+    <td class="tg-buh4">28.44</td>
+    <td class="tg-0lax">19.5</td>
+    <td class="tg-buh4">13606.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:34:01</td>
+    <td class="tg-mrzz">223.82</td>
+    <td class="tg-0lax">223.79</td>
+    <td class="tg-buh4">230.34</td>
+    <td class="tg-0lax">30.56</td>
+    <td class="tg-buh4">28.4</td>
+    <td class="tg-0lax">19.84</td>
+    <td class="tg-buh4">13484.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:33:01</td>
+    <td class="tg-mrzz">223.93</td>
+    <td class="tg-0lax">224.82</td>
+    <td class="tg-buh4">228.86</td>
+    <td class="tg-0lax">30.48</td>
+    <td class="tg-buh4">26.56</td>
+    <td class="tg-0lax">22.3</td>
+    <td class="tg-buh4">14284.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:32:22</td>
+    <td class="tg-mrzz">223.51</td>
+    <td class="tg-0lax">224.29</td>
+    <td class="tg-buh4">229.63</td>
+    <td class="tg-0lax">30.4</td>
+    <td class="tg-buh4">26.62</td>
+    <td class="tg-0lax">22.06</td>
+    <td class="tg-buh4">14213.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:32:01</td>
+    <td class="tg-mrzz">224.06</td>
+    <td class="tg-0lax">224.29</td>
+    <td class="tg-buh4">229.74</td>
+    <td class="tg-0lax">30.78</td>
+    <td class="tg-buh4">26.58</td>
+    <td class="tg-0lax">22.98</td>
+    <td class="tg-buh4">14554.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:31:01</td>
+    <td class="tg-mrzz">224.67</td>
+    <td class="tg-0lax">222.61</td>
+    <td class="tg-buh4">230.23</td>
+    <td class="tg-0lax">29.68</td>
+    <td class="tg-buh4">26.3</td>
+    <td class="tg-0lax">22.72</td>
+    <td class="tg-buh4">14279.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:30:01</td>
+    <td class="tg-mrzz">223.23</td>
+    <td class="tg-0lax">224.17</td>
+    <td class="tg-buh4">230.76</td>
+    <td class="tg-0lax">29.96</td>
+    <td class="tg-buh4">26.28</td>
+    <td class="tg-0lax">19.54</td>
+    <td class="tg-buh4">13000.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:29:01</td>
+    <td class="tg-mrzz">225.23</td>
+    <td class="tg-0lax">222.77</td>
+    <td class="tg-buh4">232.01</td>
+    <td class="tg-0lax">29.96</td>
+    <td class="tg-buh4">26.66</td>
+    <td class="tg-0lax">20.12</td>
+    <td class="tg-buh4">13268.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:28:01</td>
+    <td class="tg-mrzz">224.71</td>
+    <td class="tg-0lax">222.68</td>
+    <td class="tg-buh4">232.07</td>
+    <td class="tg-0lax">29.9</td>
+    <td class="tg-buh4">26.36</td>
+    <td class="tg-0lax">19.72</td>
+    <td class="tg-buh4">13036.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:27:01</td>
+    <td class="tg-mrzz">224.38</td>
+    <td class="tg-0lax">222.83</td>
+    <td class="tg-buh4">231.95</td>
+    <td class="tg-0lax">29.6</td>
+    <td class="tg-buh4">26.48</td>
+    <td class="tg-0lax">18.4</td>
+    <td class="tg-buh4">12832.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:26:01</td>
+    <td class="tg-mrzz">224.92</td>
+    <td class="tg-0lax">224.75</td>
+    <td class="tg-buh4">230.05</td>
+    <td class="tg-0lax">29.62</td>
+    <td class="tg-buh4">26.56</td>
+    <td class="tg-0lax">18.46</td>
+    <td class="tg-buh4">12942.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:25:01</td>
+    <td class="tg-mrzz">224.02</td>
+    <td class="tg-0lax">224.57</td>
+    <td class="tg-buh4">230.15</td>
+    <td class="tg-0lax">29.82</td>
+    <td class="tg-buh4">26.62</td>
+    <td class="tg-0lax">17.56</td>
+    <td class="tg-buh4">12739.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:24:01</td>
+    <td class="tg-mrzz">225.05</td>
+    <td class="tg-0lax">225.72</td>
+    <td class="tg-buh4">229.08</td>
+    <td class="tg-0lax">29.86</td>
+    <td class="tg-buh4">26.62</td>
+    <td class="tg-0lax">21.2</td>
+    <td class="tg-buh4">14202.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:23:01</td>
+    <td class="tg-mrzz">224.47</td>
+    <td class="tg-0lax">226.03</td>
+    <td class="tg-buh4">229.11</td>
+    <td class="tg-0lax">30.02</td>
+    <td class="tg-buh4">26.3</td>
+    <td class="tg-0lax">20.4</td>
+    <td class="tg-buh4">13948.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:22:01</td>
+    <td class="tg-mrzz">225.6</td>
+    <td class="tg-0lax">225.28</td>
+    <td class="tg-buh4">228.91</td>
+    <td class="tg-0lax">29.86</td>
+    <td class="tg-buh4">26.7</td>
+    <td class="tg-0lax">21.8</td>
+    <td class="tg-buh4">14333.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:21:01</td>
+    <td class="tg-mrzz">225.36</td>
+    <td class="tg-0lax">225.29</td>
+    <td class="tg-buh4">229.84</td>
+    <td class="tg-0lax">30.12</td>
+    <td class="tg-buh4">26.42</td>
+    <td class="tg-0lax">17.06</td>
+    <td class="tg-buh4">12804.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:20:31</td>
+    <td class="tg-mrzz">224.49</td>
+    <td class="tg-0lax">225.62</td>
+    <td class="tg-buh4">230.46</td>
+    <td class="tg-0lax">30.04</td>
+    <td class="tg-buh4">26.32</td>
+    <td class="tg-0lax">16.68</td>
+    <td class="tg-buh4">12598.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:20:01</td>
+    <td class="tg-mrzz">223.59</td>
+    <td class="tg-0lax">225.7</td>
+    <td class="tg-buh4">229.84</td>
+    <td class="tg-0lax">30.12</td>
+    <td class="tg-buh4">26.54</td>
+    <td class="tg-0lax">16.62</td>
+    <td class="tg-buh4">12679.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:19:01</td>
+    <td class="tg-mrzz">225.28</td>
+    <td class="tg-0lax">225.32</td>
+    <td class="tg-buh4">230.13</td>
+    <td class="tg-0lax">30.16</td>
+    <td class="tg-buh4">26.72</td>
+    <td class="tg-0lax">16.98</td>
+    <td class="tg-buh4">12841.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:18:01</td>
+    <td class="tg-mrzz">226.56</td>
+    <td class="tg-0lax">224.97</td>
+    <td class="tg-buh4">229.79</td>
+    <td class="tg-0lax">29.72</td>
+    <td class="tg-buh4">26.28</td>
+    <td class="tg-0lax">15.98</td>
+    <td class="tg-buh4">12468.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:17:01</td>
+    <td class="tg-mrzz">225.35</td>
+    <td class="tg-0lax">225.24</td>
+    <td class="tg-buh4">230.64</td>
+    <td class="tg-0lax">30.14</td>
+    <td class="tg-buh4">26.4</td>
+    <td class="tg-0lax">16.28</td>
+    <td class="tg-buh4">12697.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:16:01</td>
+    <td class="tg-mrzz">226.38</td>
+    <td class="tg-0lax">225.14</td>
+    <td class="tg-buh4">230.55</td>
+    <td class="tg-0lax">29.86</td>
+    <td class="tg-buh4">28.96</td>
+    <td class="tg-0lax">16.3</td>
+    <td class="tg-buh4">13373.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:15:01</td>
+    <td class="tg-mrzz">227.78</td>
+    <td class="tg-0lax">227.0</td>
+    <td class="tg-buh4">229.24</td>
+    <td class="tg-0lax">29.78</td>
+    <td class="tg-buh4">24.82</td>
+    <td class="tg-0lax">19.24</td>
+    <td class="tg-buh4">13555.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:14:01</td>
+    <td class="tg-mrzz">228.91</td>
+    <td class="tg-0lax">225.59</td>
+    <td class="tg-buh4">229.43</td>
+    <td class="tg-0lax">29.38</td>
+    <td class="tg-buh4">24.7</td>
+    <td class="tg-0lax">18.9</td>
+    <td class="tg-buh4">13374.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:13:05</td>
+    <td class="tg-mrzz">229.01</td>
+    <td class="tg-0lax">225.38</td>
+    <td class="tg-buh4">229.52</td>
+    <td class="tg-0lax">29.02</td>
+    <td class="tg-buh4">23.96</td>
+    <td class="tg-0lax">19.2</td>
+    <td class="tg-buh4">13260.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:13:01</td>
+    <td class="tg-mrzz">228.76</td>
+    <td class="tg-0lax">225.8</td>
+    <td class="tg-buh4">229.54</td>
+    <td class="tg-0lax">29.0</td>
+    <td class="tg-buh4">24.06</td>
+    <td class="tg-0lax">19.1</td>
+    <td class="tg-buh4">13251.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:12:12</td>
+    <td class="tg-mrzz">228.13</td>
+    <td class="tg-0lax">225.37</td>
+    <td class="tg-buh4">230.85</td>
+    <td class="tg-0lax">29.1</td>
+    <td class="tg-buh4">24.06</td>
+    <td class="tg-0lax">16.34</td>
+    <td class="tg-buh4">12122.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:12:01</td>
+    <td class="tg-mrzz">227.11</td>
+    <td class="tg-0lax">226.48</td>
+    <td class="tg-buh4">230.58</td>
+    <td class="tg-0lax">29.22</td>
+    <td class="tg-buh4">24.22</td>
+    <td class="tg-0lax">16.38</td>
+    <td class="tg-buh4">12207.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:11:44</td>
+    <td class="tg-mrzz">227.37</td>
+    <td class="tg-0lax">226.72</td>
+    <td class="tg-buh4">230.68</td>
+    <td class="tg-0lax">28.92</td>
+    <td class="tg-buh4">24.24</td>
+    <td class="tg-0lax">16.0</td>
+    <td class="tg-buh4">11996.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:11:36</td>
+    <td class="tg-mrzz">227.51</td>
+    <td class="tg-0lax">226.57</td>
+    <td class="tg-buh4">230.39</td>
+    <td class="tg-0lax">28.88</td>
+    <td class="tg-buh4">24.34</td>
+    <td class="tg-0lax">16.14</td>
+    <td class="tg-buh4">12076.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:11:01</td>
+    <td class="tg-mrzz">227.32</td>
+    <td class="tg-0lax">230.04</td>
+    <td class="tg-buh4">228.45</td>
+    <td class="tg-0lax">28.98</td>
+    <td class="tg-buh4">24.14</td>
+    <td class="tg-0lax">16.18</td>
+    <td class="tg-buh4">12137.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:10:02</td>
+    <td class="tg-mrzz">225.83</td>
+    <td class="tg-0lax">230.7</td>
+    <td class="tg-buh4">228.57</td>
+    <td class="tg-0lax">29.26</td>
+    <td class="tg-buh4">24.16</td>
+    <td class="tg-0lax">16.06</td>
+    <td class="tg-buh4">12155.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:09:02</td>
+    <td class="tg-mrzz">226.12</td>
+    <td class="tg-0lax">230.33</td>
+    <td class="tg-buh4">229.21</td>
+    <td class="tg-0lax">29.34</td>
+    <td class="tg-buh4">24.48</td>
+    <td class="tg-0lax">16.02</td>
+    <td class="tg-buh4">12245.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:08:01</td>
+    <td class="tg-mrzz">225.91</td>
+    <td class="tg-0lax">229.33</td>
+    <td class="tg-buh4">230.71</td>
+    <td class="tg-0lax">28.74</td>
+    <td class="tg-buh4">24.06</td>
+    <td class="tg-0lax">15.94</td>
+    <td class="tg-buh4">11991.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:07:01</td>
+    <td class="tg-mrzz">225.49</td>
+    <td class="tg-0lax">230.8</td>
+    <td class="tg-buh4">230.91</td>
+    <td class="tg-0lax">28.8</td>
+    <td class="tg-buh4">24.48</td>
+    <td class="tg-0lax">16.06</td>
+    <td class="tg-buh4">12138.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:06:01</td>
+    <td class="tg-mrzz">227.23</td>
+    <td class="tg-0lax">229.66</td>
+    <td class="tg-buh4">229.44</td>
+    <td class="tg-0lax">28.72</td>
+    <td class="tg-buh4">24.52</td>
+    <td class="tg-0lax">19.54</td>
+    <td class="tg-buh4">13445.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:05:01</td>
+    <td class="tg-mrzz">226.68</td>
+    <td class="tg-0lax">229.98</td>
+    <td class="tg-buh4">228.85</td>
+    <td class="tg-0lax">28.6</td>
+    <td class="tg-buh4">24.72</td>
+    <td class="tg-0lax">19.54</td>
+    <td class="tg-buh4">13448.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:04:01</td>
+    <td class="tg-mrzz">226.15</td>
+    <td class="tg-0lax">231.19</td>
+    <td class="tg-buh4">230.29</td>
+    <td class="tg-0lax">28.84</td>
+    <td class="tg-buh4">23.48</td>
+    <td class="tg-0lax">16.8</td>
+    <td class="tg-buh4">12015.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:03:01</td>
+    <td class="tg-mrzz">227.42</td>
+    <td class="tg-0lax">229.96</td>
+    <td class="tg-buh4">229.44</td>
+    <td class="tg-0lax">28.88</td>
+    <td class="tg-buh4">23.36</td>
+    <td class="tg-0lax">16.74</td>
+    <td class="tg-buh4">11980.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:02:01</td>
+    <td class="tg-mrzz">226.48</td>
+    <td class="tg-0lax">229.69</td>
+    <td class="tg-buh4">229.73</td>
+    <td class="tg-0lax">28.92</td>
+    <td class="tg-buh4">23.46</td>
+    <td class="tg-0lax">16.48</td>
+    <td class="tg-buh4">11892.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:01:01</td>
+    <td class="tg-mrzz">227.07</td>
+    <td class="tg-0lax">229.76</td>
+    <td class="tg-buh4">230.89</td>
+    <td class="tg-0lax">28.74</td>
+    <td class="tg-buh4">23.68</td>
+    <td class="tg-0lax">16.54</td>
+    <td class="tg-buh4">11913.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 08:00:01</td>
+    <td class="tg-mrzz">226.62</td>
+    <td class="tg-0lax">230.04</td>
+    <td class="tg-buh4">230.32</td>
+    <td class="tg-0lax">28.86</td>
+    <td class="tg-buh4">23.42</td>
+    <td class="tg-0lax">16.68</td>
+    <td class="tg-buh4">11956.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:59:01</td>
+    <td class="tg-mrzz">227.42</td>
+    <td class="tg-0lax">229.13</td>
+    <td class="tg-buh4">231.08</td>
+    <td class="tg-0lax">28.9</td>
+    <td class="tg-buh4">23.34</td>
+    <td class="tg-0lax">16.46</td>
+    <td class="tg-buh4">11849.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:58:01</td>
+    <td class="tg-mrzz">227.06</td>
+    <td class="tg-0lax">229.16</td>
+    <td class="tg-buh4">230.66</td>
+    <td class="tg-0lax">29.36</td>
+    <td class="tg-buh4">23.6</td>
+    <td class="tg-0lax">16.4</td>
+    <td class="tg-buh4">11992.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:57:01</td>
+    <td class="tg-mrzz">227.06</td>
+    <td class="tg-0lax">229.12</td>
+    <td class="tg-buh4">230.07</td>
+    <td class="tg-0lax">29.18</td>
+    <td class="tg-buh4">23.56</td>
+    <td class="tg-0lax">19.6</td>
+    <td class="tg-buh4">13273.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:56:01</td>
+    <td class="tg-mrzz">224.33</td>
+    <td class="tg-0lax">231.2</td>
+    <td class="tg-buh4">230.88</td>
+    <td class="tg-0lax">29.84</td>
+    <td class="tg-buh4">22.6</td>
+    <td class="tg-0lax">18.86</td>
+    <td class="tg-buh4">12980.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:55:01</td>
+    <td class="tg-mrzz">224.48</td>
+    <td class="tg-0lax">231.67</td>
+    <td class="tg-buh4">230.1</td>
+    <td class="tg-0lax">29.66</td>
+    <td class="tg-buh4">22.66</td>
+    <td class="tg-0lax">19.12</td>
+    <td class="tg-buh4">13009.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:54:01</td>
+    <td class="tg-mrzz">224.05</td>
+    <td class="tg-0lax">232.88</td>
+    <td class="tg-buh4">230.99</td>
+    <td class="tg-0lax">29.12</td>
+    <td class="tg-buh4">22.62</td>
+    <td class="tg-0lax">16.3</td>
+    <td class="tg-buh4">11722.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:53:01</td>
+    <td class="tg-mrzz">223.79</td>
+    <td class="tg-0lax">233.3</td>
+    <td class="tg-buh4">230.19</td>
+    <td class="tg-0lax">28.52</td>
+    <td class="tg-buh4">22.9</td>
+    <td class="tg-0lax">15.88</td>
+    <td class="tg-buh4">11618.6</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:52:01</td>
+    <td class="tg-mrzz">222.37</td>
+    <td class="tg-0lax">234.69</td>
+    <td class="tg-buh4">230.27</td>
+    <td class="tg-0lax">28.82</td>
+    <td class="tg-buh4">22.3</td>
+    <td class="tg-0lax">16.06</td>
+    <td class="tg-buh4">11671.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:51:01</td>
+    <td class="tg-mrzz">222.84</td>
+    <td class="tg-0lax">234.22</td>
+    <td class="tg-buh4">230.37</td>
+    <td class="tg-0lax">28.4</td>
+    <td class="tg-buh4">21.66</td>
+    <td class="tg-0lax">16.24</td>
+    <td class="tg-buh4">11557.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:50:01</td>
+    <td class="tg-mrzz">225.12</td>
+    <td class="tg-0lax">232.15</td>
+    <td class="tg-buh4">230.19</td>
+    <td class="tg-0lax">28.56</td>
+    <td class="tg-buh4">21.74</td>
+    <td class="tg-0lax">15.98</td>
+    <td class="tg-buh4">11540.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:49:01</td>
+    <td class="tg-mrzz">225.73</td>
+    <td class="tg-0lax">232.87</td>
+    <td class="tg-buh4">228.9</td>
+    <td class="tg-0lax">28.64</td>
+    <td class="tg-buh4">21.68</td>
+    <td class="tg-0lax">19.08</td>
+    <td class="tg-buh4">12780.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:48:01</td>
+    <td class="tg-mrzz">228.03</td>
+    <td class="tg-0lax">231.21</td>
+    <td class="tg-buh4">228.45</td>
+    <td class="tg-0lax">27.22</td>
+    <td class="tg-buh4">21.8</td>
+    <td class="tg-0lax">18.74</td>
+    <td class="tg-buh4">12438.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:47:01</td>
+    <td class="tg-mrzz">226.13</td>
+    <td class="tg-0lax">230.69</td>
+    <td class="tg-buh4">228.91</td>
+    <td class="tg-0lax">25.82</td>
+    <td class="tg-buh4">20.72</td>
+    <td class="tg-0lax">19.24</td>
+    <td class="tg-buh4">12212.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:46:01</td>
+    <td class="tg-mrzz">225.28</td>
+    <td class="tg-0lax">231.5</td>
+    <td class="tg-buh4">231.17</td>
+    <td class="tg-0lax">25.82</td>
+    <td class="tg-buh4">20.24</td>
+    <td class="tg-0lax">16.2</td>
+    <td class="tg-buh4">10781.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:45:02</td>
+    <td class="tg-mrzz">226.57</td>
+    <td class="tg-0lax">231.0</td>
+    <td class="tg-buh4">231.98</td>
+    <td class="tg-0lax">25.96</td>
+    <td class="tg-buh4">20.46</td>
+    <td class="tg-0lax">16.22</td>
+    <td class="tg-buh4">10838.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:44:01</td>
+    <td class="tg-mrzz">227.62</td>
+    <td class="tg-0lax">229.98</td>
+    <td class="tg-buh4">231.92</td>
+    <td class="tg-0lax">25.58</td>
+    <td class="tg-buh4">20.28</td>
+    <td class="tg-0lax">16.12</td>
+    <td class="tg-buh4">10685.8</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:43:02</td>
+    <td class="tg-mrzz">227.85</td>
+    <td class="tg-0lax">230.04</td>
+    <td class="tg-buh4">231.71</td>
+    <td class="tg-0lax">25.24</td>
+    <td class="tg-buh4">20.3</td>
+    <td class="tg-0lax">16.24</td>
+    <td class="tg-buh4">10698.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:42:01</td>
+    <td class="tg-mrzz">227.43</td>
+    <td class="tg-0lax">229.3</td>
+    <td class="tg-buh4">232.56</td>
+    <td class="tg-0lax">25.58</td>
+    <td class="tg-buh4">20.2</td>
+    <td class="tg-0lax">16.06</td>
+    <td class="tg-buh4">10698.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:41:01</td>
+    <td class="tg-mrzz">228.87</td>
+    <td class="tg-0lax">229.16</td>
+    <td class="tg-buh4">231.71</td>
+    <td class="tg-0lax">24.0</td>
+    <td class="tg-buh4">20.24</td>
+    <td class="tg-0lax">16.02</td>
+    <td class="tg-buh4">10452.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:40:01</td>
+    <td class="tg-mrzz">228.39</td>
+    <td class="tg-0lax">230.42</td>
+    <td class="tg-buh4">231.09</td>
+    <td class="tg-0lax">24.18</td>
+    <td class="tg-buh4">20.28</td>
+    <td class="tg-0lax">19.16</td>
+    <td class="tg-buh4">11755.4</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:39:01</td>
+    <td class="tg-mrzz">228.77</td>
+    <td class="tg-0lax">229.25</td>
+    <td class="tg-buh4">231.16</td>
+    <td class="tg-0lax">24.18</td>
+    <td class="tg-buh4">20.46</td>
+    <td class="tg-0lax">18.98</td>
+    <td class="tg-buh4">11731.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:38:01</td>
+    <td class="tg-mrzz">228.56</td>
+    <td class="tg-0lax">231.24</td>
+    <td class="tg-buh4">230.09</td>
+    <td class="tg-0lax">24.22</td>
+    <td class="tg-buh4">20.42</td>
+    <td class="tg-0lax">19.14</td>
+    <td class="tg-buh4">11743.2</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:37:01</td>
+    <td class="tg-mrzz">228.65</td>
+    <td class="tg-0lax">230.33</td>
+    <td class="tg-buh4">232.32</td>
+    <td class="tg-0lax">24.02</td>
+    <td class="tg-buh4">20.42</td>
+    <td class="tg-0lax">16.42</td>
+    <td class="tg-buh4">10618.0</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">2018-10-12 07:36:01</td>
+    <td class="tg-mrzz">228.29</td>
+    <td class="tg-0lax">230.75</td>
+    <td class="tg-buh4">232.22</td>
+    <td class="tg-0lax">24.38</td>
+    <td class="tg-buh4">20.14</td>
+    <td class="tg-0lax">16.2</td>
+    <td class="tg-buh4">10478.0</td>
+  </tr>
+
+</table>
+</div></div>
+</body>
+</html>
