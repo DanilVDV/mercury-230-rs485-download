@@ -1,1 +1,1 @@
-# This software allows you to receive data from the counters Mercury 230, Mercury 231, Mercury 232, Mercury 233 using an interface converter RS-485 <=> ETHERNET. Data exchange is carried out through a network socket.
+- This software allows you to receive data from the counters Mercury 230, Mercury 231, Mercury 232, Mercury 233 using an interface converter RS-485 <=> ETHERNET. Data exchange is carried out through a network socket.
