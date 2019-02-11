@@ -371,7 +371,7 @@ def genValueForReport(name):
 def connectBase(databaseName):
     global conn
     global cursor
-    database = "/home/user/database_mercury/" + databaseName
+    database = databaseName
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
 
